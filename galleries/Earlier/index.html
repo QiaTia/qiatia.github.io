@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qiatia.gitee.io">
-  <title>Axios 批处理 - 小记 | QiaTia`博客</title>
+  <title>Earlier | QiaTia`博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Axios 批处理 - 小记老板突然突发奇想让我做一个啥商家批量导单的网页, Excuse me ! 我早就想尝试一下前端做一些并发的请求咯. 回调式处理第一次做批量处理, 不敢太浪, 只敢做一下回调式慢慢处理, 回调嘛 也就是监听一个任务做完了以后,我们再给他安排做下一个任务, 最好就是自己搞完了在调用自己 1234567let index &#x3D; 0;function callback()&amp;#12">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Axios 批处理 - 小记">
-<meta property="og:url" content="http://qiatia.gitee.io/2019/05/30/axios-all/index.html">
+  <meta name="description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Earlier">
+<meta property="og:url" content="http://qiatia.gitee.io/galleries/Earlier/index.html">
 <meta property="og:site_name" content="QiaTia&#96;博客">
-<meta property="og:description" content="Axios 批处理 - 小记老板突然突发奇想让我做一个啥商家批量导单的网页, Excuse me ! 我早就想尝试一下前端做一些并发的请求咯. 回调式处理第一次做批量处理, 不敢太浪, 只敢做一下回调式慢慢处理, 回调嘛 也就是监听一个任务做完了以后,我们再给他安排做下一个任务, 最好就是自己搞完了在调用自己 1234567let index &#x3D; 0;function callback()&amp;#12">
+<meta property="og:description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-05-30T04:27:08.000Z">
-<meta property="article:modified_time" content="2019-05-30T04:54:19.301Z">
+<meta property="article:published_time" content="2020-12-26T11:41:18.907Z">
+<meta property="article:modified_time" content="2020-12-26T11:41:18.907Z">
 <meta property="article:author" content="QiaTia">
-<meta property="article:tag" content="axios">
-<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="QiaTia`博客" type="application/atom+xml">
@@ -164,206 +163,23 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-axios-all" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Axios 批处理 - 小记
-    </h1>
-  
+            
+<link href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+<link href="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css" rel="stylesheet">
+<main class="container">
+    <div class="photo-wrapper">
+        <div class="waterfall" id="mygallery">
+            <a target="_blank" href="https://i.qiatia.cn/public/images/%E6%A4%92%E5%AD%90%E5%B0%8F%E5%AD%A62009%E5%B1%8A.jpg" class="photo-item" rel="example_group noopener" data-fancybox="images"><img src="https://i.qiatia.cn/public/images/%E6%A4%92%E5%AD%90%E5%B0%8F%E5%AD%A62009%E5%B1%8A.jpg" alt="椒子小学2009届.jpg"></a><a target="_blank" href="https://i.qiatia.cn/public/images/5-8%E5%AE%BF%E8%88%8D.jpg" class="photo-item" rel="example_group noopener" data-fancybox="images"><img src="https://i.qiatia.cn/public/images/5-8%E5%AE%BF%E8%88%8D.jpg" alt="5-8宿舍.jpg"></a>
 
-        
-        <a href="/2019/05/30/axios-all/" class="archive-article-date">
-  	<time datetime="2019-05-30T04:27:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Axios-批处理-小记"><a href="#Axios-批处理-小记" class="headerlink" title="Axios 批处理 - 小记"></a>Axios 批处理 - 小记</h1><p>老板突然突发奇想让我做一个啥商家批量导单的网页, Excuse me ! 我早就想尝试一下前端做一些并发的请求咯.</p>
-<h3 id="回调式处理"><a href="#回调式处理" class="headerlink" title="回调式处理"></a>回调式处理</h3><p>第一次做批量处理, 不敢太浪, 只敢做一下回调式慢慢处理, 回调嘛 也就是监听一个任务做完了以后,我们再给他安排做下一个任务, 最好就是自己搞完了在调用自己</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(++index)</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(callback, <span class="number">500</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>在Axios里面思路也是一样的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createOrder</span>(<span class="params">index</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 完成监听要写在这</span></span><br><span class="line">    <span class="keyword">if</span>(!data[index]) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    axios.get(<span class="string">&#x27;/createOrder&#x27;</span>,data[index]).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// ... 可能会有更多的处理</span></span><br><span class="line">        successArr.push(index)</span><br><span class="line">        createOrder(++index)</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        failArr.push(&#123;index, ...res&#125;)</span><br><span class="line">        createOrder(++index)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>虽然异步让我门代码增加了需要, 但是不可否认, 异步带来的体验绝对好过同步太多. 这种回调式的处理, 非常适合那些任务量不大,但是服务器带宽比较底下的任务.<br>#</p>
-<h3 id="并发处理"><a href="#并发处理" class="headerlink" title="并发处理"></a>并发处理</h3><p>虽然回调这样的处理安全性应该来说真的很棒, 但是对于时间销耗是真的… 慢的要命, 这个时候我们就可以去考虑一下并发请求了. </p>
-<p>很简单的, axios本身就是无阻塞的异步函数, 只要我们多写几个请求挨着下去, 这样就不会等待上一个请求放回了才请求下一个</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">let</span> index <span class="keyword">in</span> data</span>)</span>&#123;</span><br><span class="line">    axios.get(<span class="string">&#x27;/createOrder&#x27;</span>,data[index]).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(index, <span class="string">&#x27;=&gt;&#x27;</span>, res)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这种处理, 如果不考虑结果的请求, 是完全没问题的, 上面这种函数, 而且还是异步的. 完全就是闭包啊, 最好输出的index全部都是data.length吧.<br>这个时候我们应该怎么办呢 ?</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data.map(<span class="function"><span class="keyword">function</span> (<span class="params">item,index</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 我们知道每一个函数都会有他的作用域</span></span><br><span class="line">    <span class="comment">// 所以我们将每一次请求都放在一个函数里面就不会有闭包的问题产生咯</span></span><br><span class="line">     axios.get(<span class="string">&#x27;/createOrder&#x27;</span>,item).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(index, <span class="string">&#x27;=&gt;&#x27;</span>, res)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>我们知道, 后台服务器这东西是最不靠谱的玩意儿, 所以我们怎么才能知道这些请求都做完了呢? 这是一个问题. 还好我们还有promise.all<br>#<br>翻阅一些axios的文档, 我们可以清楚的看到可以把axios的请求放到axios.all里面, 这样我们就可以监听并处理他全部的事件了</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行多个并发请求</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserAccount</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">&#x27;/user/12345&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserPermissions</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">&#x27;/user/12345/permissions&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">axios.all([getUserAccount(), getUserPermissions()])</span><br><span class="line">  .then(axios.spread(<span class="function"><span class="keyword">function</span> (<span class="params">acct, perms</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 两个请求现在都执行完成</span></span><br><span class="line">  &#125;));</span><br></pre></td></tr></table></figure>
-
-<p>这样来看看, 我们的需求就非常简单了</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> requests data.map(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> axios.get(<span class="string">&#x27;/createOrder&#x27;</span>,data)</span><br><span class="line">&#125;)</span><br><span class="line">axios.all(requests).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 上面那个 axios.spread是把放回的结果拆开给我们处理</span></span><br><span class="line">    <span class="comment">// 我这现在放回的res是一个所有返回的数组</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;success=&gt;&#x27;</span>,res.length)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;fail=&gt;&#x27;</span>,res.length)</span><br><span class="line">&#125;) <span class="comment">// 这个错误监听我还不知道有没有用呢</span></span><br></pre></td></tr></table></figure>
-
-<p>Oj8k, 思路理下来, 其实批处理完全不难, 感谢axios, 感谢各位前端大牛给我们造的那么多轮子,感谢每一位在前端路上前进的人们, 让我门一起加油努力把.</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="http://res.qiatia.cn/imgs/2019/05/fce8fbb4607a28dc.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://qiatia.gitee.io/2019/05/30/axios-all/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/05/30/async-await/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          async 与 await
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/05/18/Mint-Picker/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mint_Picker 联动选择器</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
+</main>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<!-- <script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+<script>(w=>w.jQuery = w.$)(window)</script> -->
+<script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+<script>$("a[rel=example_group]").fancybox();$("#mygallery").justifiedGallery({margins: 5, rowHeight: 150})</script>
 
           </div>
         </div>
@@ -385,7 +201,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
