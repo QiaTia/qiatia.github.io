@@ -184,28 +184,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>前几天看到了这一篇文章, 纯CSS来实现这种还算比较复杂的动画, 感觉蛮有意思的, 就打算自己跟着写一个 Dome 跑起来看看<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903764558610445">纯css模拟下雪效果</a><br>我这使用的是React + Less, 会更原文有很多差异, 但是思路都是一样的.</p>
-<h3 id="CSS绘制雪花"><a href="#CSS绘制雪花" class="headerlink" title="CSS绘制雪花"></a>CSS绘制雪花</h3><p>  利用CSS多条线性渐变既可以</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.snowflake</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(<span class="number">0</span>, rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">40%</span>, <span class="number">#fff</span> <span class="number">40%</span>, <span class="number">#fff</span> <span class="number">60%</span>, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">60%</span>),</span><br><span class="line">    <span class="built_in">linear-gradient</span>(<span class="number">45deg</span>, rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">43%</span>, <span class="number">#fff</span> <span class="number">43%</span>, <span class="number">#fff</span> <span class="number">57%</span>, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">57%</span>),</span><br><span class="line">    <span class="built_in">linear-gradient</span>(<span class="number">90deg</span>, rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">40%</span>, <span class="number">#fff</span> <span class="number">40%</span>, <span class="number">#fff</span> <span class="number">60%</span>, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">60%</span>),</span><br><span class="line">    <span class="built_in">linear-gradient</span>(<span class="number">135deg</span>, rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">43%</span>, <span class="number">#fff</span> <span class="number">43%</span>, <span class="number">#fff</span> <span class="number">57%</span>, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">57%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="飘落效果"><a href="#飘落效果" class="headerlink" title="飘落效果"></a>飘落效果</h3><p>上下直接使用相对定位就行, 左右动画使用 translateX 就很方便的, 主要还是随机方面比较麻烦, 原文很多东西都直接使用SCSS的循环来做, 我觉得完全没必要, 不是必要的我还是喜欢直接用行内样式, MVVM模式渲染不会增大加载速度的</p>
-<p>一些随机的准备</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> snowItemProps &#123;</span><br><span class="line">  position?: <span class="built_in">number</span>,</span><br><span class="line">  delay?: <span class="built_in">number</span>,</span><br><span class="line">  duration?: <span class="built_in">number</span>,</span><br><span class="line">  name?: <span class="built_in">number</span>,</span><br><span class="line">  timing?: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> random = (min:<span class="built_in">number</span>, <span class="attr">max</span>:<span class="built_in">number</span>):<span class="function"><span class="params">number</span> =&gt;</span>  <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>) + min)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> position = ():<span class="function"><span class="params">number</span> =&gt;</span> random(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line"><span class="keyword">const</span> delay = ():<span class="function"><span class="params">number</span>=&gt;</span> random(<span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line"><span class="keyword">const</span> duration = ():<span class="function"><span class="params">number</span> =&gt;</span> random(<span class="number">4</span>, <span class="number">8</span>)</span><br><span class="line"><span class="keyword">const</span> name = ():<span class="function"><span class="params">number</span> =&gt;</span> random(<span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line"><span class="keyword">const</span> timing = ():<span class="function"><span class="params">string</span>=&gt;</span> [<span class="string">&#x27;linear&#x27;</span>, <span class="string">&#x27;ease&#x27;</span>, <span class="string">&#x27;ease-in&#x27;</span>, <span class="string">&#x27;ease-out&#x27;</span>, <span class="string">&#x27;ease-in-out&#x27;</span>][random(<span class="number">0</span>, <span class="number">4</span>)]</span><br></pre></td></tr></table></figure>
-
-<p>雪花组件</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> SnowFlake = <span class="function">(<span class="params">&#123; position, delay, duration, name, timing &#125;:snowItemProps</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> style = &#123; <span class="attr">left</span>: position + <span class="string">&#x27;vw&#x27;</span>, <span class="attr">animationName</span>: <span class="string">&#x27;fall,snow&#x27;</span>+name, <span class="attr">animationDuration</span>: duration + <span class="string">&#x27;s&#x27;</span>, <span class="attr">animationDelay</span>: delay +<span class="string">&#x27;s&#x27;</span>, <span class="attr">animationTimingFunction</span>: timing &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;</span> <span class="attr">style</span> &#125; <span class="attr">className</span>=<span class="string">&quot;snowflake&quot;</span> /&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后直接使用Array.map直接渲染出100个雪花, 然后加上飘落的CSS样式, 雪花就可以起飞了</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>(<span class="number">100</span>).fill(<span class="number">0</span>).map(<span class="function">(<span class="params">v, i</span>)=&gt;</span><span class="xml"><span class="tag">&lt;<span class="name">SnowFlake</span> <span class="attr">key</span>=<span class="string">&#123;i&#125;</span> <span class="attr">position</span>=<span class="string">&#123;position()&#125;</span> <span class="attr">delay</span>=<span class="string">&#123;delay()&#125;</span> <span class="attr">duration</span>=<span class="string">&#123;duration()&#125;</span> <span class="attr">name</span>=<span class="string">&#123;name()&#125;</span> <span class="attr">timing</span>=<span class="string">&#123;timing()&#125;</span> /&gt;</span></span>)</span><br></pre></td></tr></table></figure>
-
-<p>上下动画</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> fall &#123;</span><br><span class="line">  25% &#123; <span class="attribute">top</span>: <span class="number">0</span> &#125;</span><br><span class="line">  100%&#123; <span class="attribute">top</span>: <span class="number">100vh</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>左右横跳</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.loop</span>(<span class="keyword">@i</span>) when (@i &lt;= <span class="number">4</span>)&#123;</span><br><span class="line">  @snowname: ~&#x27;snow@&#123;i&#125;&#x27;;</span><br><span class="line">  <span class="keyword">@keyframes</span> @snowname &#123;</span><br><span class="line">    25% &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-(@i * <span class="number">10px</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateX</span>((@i * <span class="number">10px</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    75%&#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-(@i * <span class="number">10px</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    100%&#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateX</span>((@i * <span class="number">10px</span>));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="selector-class">.loop</span>(<span class="keyword">@i</span>+1);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loop</span>(1);</span><br></pre></td></tr></table></figure>
-
-<p>然后给雪花加上定位样式就可以直接好了</p>
-<h3 id=""><a href="#" class="headerlink" title="."></a>.</h3><p>这雪花是飘起来了, 但是丑还是有点丑, 然后有点肉眼可见的生硬感. 感觉这种比较复杂的动画还是交给canvas来做会好一点.</p>
-
+        
+          <a class="article-more-a" href="/2021/01/09/%E7%BA%AFCSS%E5%AE%9E%E7%8E%B0%E9%9B%AA%E8%8A%B1%E9%A3%98%E8%90%BD%E6%95%88%E6%9E%9C/#more">more >></a>
+        
       
 
       
@@ -1095,11 +1076,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1115,15 +1096,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1147,15 +1128,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
