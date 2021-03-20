@@ -50,7 +50,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://www.qiatia.cn/images/user/ACG58_5b1fccc8be0ba.jpg" class="js-avatar">
+			<img src="https://i.qiatia.cn/wx/2020-9-30/tcc0oisy0i.webp" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -110,7 +110,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://www.qiatia.cn/images/user/ACG58_5b1fccc8be0ba.jpg" class="js-avatar">
+				<img src="https://i.qiatia.cn/wx/2020-9-30/tcc0oisy0i.webp" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -214,32 +214,6 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> $http = <span class="built_in">require</span>(<span class="string">&#x27;./libs/http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> axios = <span class="built_in">require</span>(<span class="string">&#x27;axios&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> fileHttp = axios.create(&#123;</span><br><span class="line">  timeout: <span class="number">6e5</span>, <span class="comment">// 这里我设置超时为10分钟</span></span><br><span class="line">  headers,</span><br><span class="line">  responseType: <span class="string">&quot;stream&quot;</span> <span class="comment">// 表示我们接受的数据为二进制流</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> url = <span class="string">&#x27;http://.../index.m3u8&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这里我使用 await 来处理异步, 所以申请了一个 async 的匿名函数</span></span><br><span class="line">;(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">  <span class="comment">// 解析链接</span></span><br><span class="line">  <span class="keyword">const</span> &#123; filePath, fileName &#125; = (<span class="function">(<span class="params">url</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> arr = url.split(<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="string">&quot;fileName&quot;</span>: arr[arr.length - <span class="number">1</span>].split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>],</span><br><span class="line">      <span class="string">&quot;filePath&quot;</span>: url.replace(arr[arr.length-<span class="number">1</span>],<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(url)</span><br><span class="line">  <span class="keyword">const</span> downFile = <span class="function">(<span class="params">url, name</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">const</span> filePath = path.join(__dirname, <span class="string">`<span class="subst">$&#123;fileName&#125;</span>/<span class="subst">$&#123;name&#125;</span>`</span>)</span><br><span class="line">      <span class="keyword">const</span> writer = fs.createWriteStream(filePath)</span><br><span class="line">      fileHttp(url).then(<span class="function">(<span class="params">&#123; data &#125;</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// 直接使用node二进制对象的pipe方法写入文件</span></span><br><span class="line">        data.pipe(writer)</span><br><span class="line">        writer.on(<span class="string">&quot;finish&quot;</span>, <span class="function"><span class="params">e</span>=&gt;</span>&#123;</span><br><span class="line">          writer.end()</span><br><span class="line">          resolve(e)</span><br><span class="line">        &#125;)</span><br><span class="line">        writer.on(<span class="string">&quot;error&quot;</span>, <span class="function"><span class="params">e</span>=&gt;</span>&#123;</span><br><span class="line">          writer.end()</span><br><span class="line">          reject(e)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;).catch(reject)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> data = <span class="keyword">await</span> $http.get(url)</span><br><span class="line">  <span class="keyword">const</span> list = data.split(<span class="string">&#x27;\n&#x27;</span>).filter(<span class="function"><span class="params">item</span>=&gt;</span> !<span class="regexp">/^#\w+/</span>.test(item))</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> doneIndex = <span class="number">1</span></span><br><span class="line">  <span class="keyword">const</span> primiseArr = []</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 获取资源并保存</span></span><br><span class="line">  <span class="keyword">const</span> getRes = <span class="function">(<span class="params">item</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">const</span> url = filePath + item</span><br><span class="line">      downFile(filePath + item, item)</span><br><span class="line">        .then(<span class="function">()=&gt;</span>resolve(&#123;url, item&#125;))</span><br><span class="line">        .catch(<span class="function"><span class="params">e</span>=&gt;</span>reject(&#123;url, item, e&#125;))</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 任务调度核心</span></span><br><span class="line">  <span class="keyword">const</span> resCore =<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> item = list.shift()</span><br><span class="line">    <span class="keyword">if</span>(!item) <span class="keyword">return</span> <span class="built_in">console</span>.log(doneIndex++, <span class="string">&quot;done !&quot;</span>)</span><br><span class="line">    primiseArr.push(getRes(item).then(<span class="function"><span class="params">e</span>=&gt;</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(e.item, <span class="string">&#x27;done&#x27;</span>)</span><br><span class="line">      resCore()</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">e</span>=&gt;</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(e)</span><br><span class="line">      resCore()</span><br><span class="line">    &#125;))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> coreNum = <span class="number">6</span></span><br><span class="line">  <span class="keyword">while</span>(coreNum--) resCore()</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="http://res.qiatia.cn/imgs/2019/05/fce8fbb4607a28dc.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -469,11 +443,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,10 +463,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJS</a>
               </li>
              
@@ -501,11 +471,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,11 +487,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">ffmpeg</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,6 +500,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">

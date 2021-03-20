@@ -6,20 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qiatia.gitee.io">
-  <title>async 与 await | QiaTia`博客</title>
+  <title>Archives: 2021/3 | QiaTia`博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="async 与 await异步对于用户来说真的是超级爽的, 但是对于开发来说真的蛮坑的.但是呢&#x3D;&gt; 同步一时爽, 用户火葬场啊 axios 的同步获取 &#x3D;&gt; 正确做法 1234567let getToken &#x3D;&gt;()&amp;#123;  return axios.get(&amp;#x27;&#x2F;getToken&amp;#x27;)&amp;#125;(async ()&#x3D;&gt;&amp;#123;let t &#x3D; aw">
-<meta property="og:type" content="article">
-<meta property="og:title" content="async 与 await">
-<meta property="og:url" content="http://qiatia.gitee.io/2019/05/30/async-await/index.html">
+  <meta name="description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="QiaTia&#96;博客">
+<meta property="og:url" content="http://qiatia.gitee.io/archives/2021/03/index.html">
 <meta property="og:site_name" content="QiaTia&#96;博客">
-<meta property="og:description" content="async 与 await异步对于用户来说真的是超级爽的, 但是对于开发来说真的蛮坑的.但是呢&#x3D;&gt; 同步一时爽, 用户火葬场啊 axios 的同步获取 &#x3D;&gt; 正确做法 1234567let getToken &#x3D;&gt;()&amp;#123;  return axios.get(&amp;#x27;&#x2F;getToken&amp;#x27;)&amp;#125;(async ()&#x3D;&gt;&amp;#123;let t &#x3D; aw">
+<meta property="og:description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-05-30T04:28:18.000Z">
-<meta property="article:modified_time" content="2019-05-30T04:52:16.071Z">
 <meta property="article:author" content="QiaTia">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="axios">
+<meta property="article:tag" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="QiaTia`博客" type="application/atom+xml">
@@ -164,167 +161,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-async-await" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      async 与 await
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/03/13/%E9%80%81%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BC%80%E5%B9%B4%E7%A4%BC%E7%89%A9-%E5%B0%8F%E7%B1%B311/" class="archive-article-date">
+  	<time datetime="2021-03-13T07:26:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/03/13/%E9%80%81%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BC%80%E5%B9%B4%E7%A4%BC%E7%89%A9-%E5%B0%8F%E7%B1%B311/">送个自己的开年礼物 小米11</a>
     </h1>
   
 
-        
-        <a href="/2019/05/30/async-await/" class="archive-article-date">
-  	<time datetime="2019-05-30T04:28:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="async-与-await"><a href="#async-与-await" class="headerlink" title="async 与 await"></a>async 与 await</h1><p>异步对于用户来说真的是超级爽的, 但是对于开发来说真的蛮坑的.<br>但是呢=&gt; 同步一时爽, 用户火葬场啊</p>
-<p>axios 的同步获取 =&gt; 正确做法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> getToken =&gt;()&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">&#x27;/getToken&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line"><span class="keyword">let</span> t = <span class="keyword">await</span> getToken()</span><br><span class="line"><span class="built_in">console</span>.log(t)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=&gt; &#123;&quot;token&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcHAuZGV2LmthaXNoaXNvbmcuY29tIiwiYXVkIjoiYXBwLmRldi5rYWlzaGlzb25nLmNvbSIsImlhdCI6MTU1ODM0NDI1NiwibmJmIjoxNTU4MzQ0MjU2LCJleHAiOjE1NTgzNDQzMTYsImRhdGEiOnsidWlkIjoiMSIsInR5cGUiOiIzIiwidGVsIjoiMTU5Mjg3MDQ3NDEifX0.SoLqTMZsJOl_K5a-PKVPOdyLFSd3tfcJQeULDJC0IHc&quot;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>吃了一下午的亏, 我才反应过来 async定义的方法还是异步的, 只是 await 下的会把异步的Promise对象弄成同步处理….<br>错误做法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> t=<span class="string">&#x27;&#x27;</span>;</span><br><span class="line">(<span class="keyword">async</span> ()=&gt;&#123;</span><br><span class="line">    t = <span class="keyword">await</span> axios.get(<span class="string">&#x27;/users/login/refreshtoken?userkey=kppyYpycZJdomJJvem1pd5RrmXN6mKR6Z5xipJiipaSjpn1xmqp3qWOdmXp7eWt0lGadZXLdx5hsmWqSm5aZlZWWbmCYn2U&#x27;</span>)</span><br><span class="line">	<span class="built_in">console</span>.log(t.data.data.token)</span><br><span class="line"> &#125;)()</span><br><span class="line"><span class="built_in">console</span>.log(t)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">=&gt;   &quot;&quot;</span><br><span class="line">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcHAuZGV2LmthaXNoaXNvbmcuY29tIiwiYXVkIjoiYXBwLmRldi5rYWlzaGlzb25nLmNvbSIsImlhdCI6MTU1ODM0NDI1NiwibmJmIjoxNTU4MzQ0MjU2LCJleHAiOjE1NTgzNDQzMTYsImRhdGEiOnsidWlkIjoiMSIsInR5cGUiOiIzIiwidGVsIjoiMTU5Mjg3MDQ3NDEifX0.SoLqTMZsJOl_K5a-PKVPOdyLFSd3tfcJQeULDJC0IHc</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://qiatia.gitee.io/2019/05/30/async-await/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/05/30/token-axios/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          拦截token验证与ref Token (Vue, Axios)
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/05/30/axios-all/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Axios 批处理 - 小记</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -347,8 +237,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
