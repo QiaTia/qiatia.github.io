@@ -16,7 +16,7 @@
 <meta property="og:description" content="缘起事情是酱紫的, 我现在笔记本电脑硬盘呢, 是比较小的250G的, 然后呢我大部分看视频都是线上直接看了, 但是就是偶尔会有一些资源需要下载下来慢慢看. 硬盘太小装了几次QQ影音都给卸载了, win10自带的播放器我也给卸载了(虽然不怎么占空间但是功能少, 我最喜欢的倍速播放都没有). 突然想起来我随时使用的网页在线播放器功能也蛮丰富的, 能不能直接做一个网页播放本地视频呢? Dome预览loc">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-25T03:33:02.000Z">
-<meta property="article:modified_time" content="2020-10-25T03:35:07.536Z">
+<meta property="article:modified_time" content="2021-04-25T03:56:51.716Z">
 <meta property="article:author" content="QiaTia">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="React">
@@ -201,7 +201,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect, ChangeEvent &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ()=&gt;&#123;</span><br><span class="line">  <span class="keyword">const</span> [ blobURL, setURL ] = useState(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  <span class="comment">// 我从 DragEvent&lt;HTMLDivElement&gt;中实在是找不到 e.dataTransfer 所以先用any来用一下</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handlePaly</span>(<span class="params">e: ChangeEvent&lt;HTMLInputElement&gt; | any</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> [ file ] = e.target.files || e.dataTransfer?.files</span><br><span class="line">    <span class="comment">// 然后这里就能取到 input 选择的 file 文件进行处理了</span></span><br><span class="line">    setURL(URL.createObjectURL(file))</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// +++++++++++++</span></span><br><span class="line">  useEffect(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> current = <span class="built_in">window</span>.document.body</span><br><span class="line">    <span class="comment">// 拖拽进入</span></span><br><span class="line">    current?.addEventListener(<span class="string">&quot;dragenter&quot;</span>, <span class="function">()=&gt;</span>&#123; <span class="comment">/* at do sth */</span> &#125;, <span class="literal">false</span>)</span><br><span class="line">    <span class="comment">// 拖拽结束 阻止冒泡, 防止浏览器直接打开</span></span><br><span class="line">    current?.addEventListener(<span class="string">&quot;dragover&quot;</span>, <span class="function"><span class="params">e</span> =&gt;</span> e.preventDefault(), <span class="literal">false</span>)</span><br><span class="line">    <span class="comment">// 拖拽离开</span></span><br><span class="line">    current?.addEventListener(<span class="string">&quot;dragleave&quot;</span>, <span class="function">()=&gt;</span>&#123; <span class="comment">/* at do sth */</span> &#125;, <span class="literal">false</span>)</span><br><span class="line">    <span class="comment">// 拖拽事件</span></span><br><span class="line">    current?.addEventListener(<span class="string">&quot;drop&quot;</span>, <span class="function"><span class="params">e</span>=&gt;</span> &#123;</span><br><span class="line">      e.preventDefault()<span class="comment">//取消事件的默认动作。</span></span><br><span class="line">      <span class="comment">// e.dataTransfer</span></span><br><span class="line">      handlePaly(e)</span><br><span class="line">    &#125;,<span class="literal">false</span>)</span><br><span class="line">  &#125;, [])</span><br><span class="line">  <span class="comment">// +++++++++++++</span></span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123; blobURL&amp;&amp;<span class="xml"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&#123;blobURL&#125;</span> <span class="attr">autoplay</span> /&gt;</span></span> &#125;</span><br><span class="line">      &lt;label className=<span class="string">&quot;drag-wrap&quot;</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">&quot;file&quot;</span> accept=<span class="string">&quot;video/*&quot;</span> onChange=&#123; handlePaly &#125; /&gt;</span><br><span class="line">      &lt;/label&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>浏览器的原生Video组件虽然能用但是很丑啊, 而且啥倍速也没用, 虽然自己写一个美化的Video也不难但是还是去找Github一个开源的视频播放器吧. 最后我找到了这个 <a target="_blank" rel="noopener" href="http://dplayer.js.org/">DPlayer</a></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install react-dplayer</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install react-dplayer</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   ...</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123; blobURL&amp;&amp;<span class="xml"><span class="tag">&lt;<span class="name">DPlayer</span> <span class="attr">options</span>=<span class="string">&#123;&#123;</span> <span class="attr">video:</span>&#123; <span class="attr">url:</span> <span class="attr">blobURL</span> &#125; &#125;&#125;/&gt;</span></span> &#125;</span><br><span class="line">      &lt;label className=<span class="string">&quot;drag-wrap&quot;</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">&quot;file&quot;</span> accept=<span class="string">&quot;video/*&quot;</span> onChange=&#123; handlePaly &#125; /&gt;</span><br><span class="line">      &lt;/label&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="缘灭"><a href="#缘灭" class="headerlink" title="缘灭"></a>缘灭</h1><p>当然还有那些拖拽美化, 视频播放器的css美化就不写上来了, 这也只是突发奇想做的一个小Dome罢了</p>
@@ -437,19 +437,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,15 +457,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -16,7 +16,7 @@
 <meta property="og:description" content="什么是 WebPWebP 是图片格式的发展趋势 WebP（发音：weppy）是一种同时提供了有损压缩与无损压缩（可逆压缩）的图片文件格式，派生自影像编码格式VP8，被认为是WebM多媒体格式的姊妹项目，是由Google在购买On2 Technologies后发展出来，以BSD授权条款发布。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-08T10:08:13.000Z">
-<meta property="article:modified_time" content="2020-11-09T10:13:24.201Z">
+<meta property="article:modified_time" content="2021-04-25T03:56:51.660Z">
 <meta property="article:author" content="QiaTia">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="NodeJS">
@@ -209,7 +209,7 @@
 
 <p>通过前端进行图片压缩, 可以节省带宽流量, 减轻服务器压力, 但是通过canvas压缩达不到webp最好得效果, 而且不支持动态gif图片的转换, 这个时候我们就需要挪到后端进行处理了</p>
 <h1 id="后端WebP操作"><a href="#后端WebP操作" class="headerlink" title="后端WebP操作"></a>后端WebP操作</h1><p>安装依赖</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -save webp-converter</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -save webp-converter</span><br></pre></td></tr></table></figure>
 
 <h2 id="image-Format-To-WebP"><a href="#image-Format-To-WebP" class="headerlink" title="image Format To WebP"></a>image Format To WebP</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webp = <span class="built_in">require</span>(<span class="string">&#x27;webp-converter&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// input, output, option</span></span><br><span class="line">webp.cwebp(<span class="string">&quot;./1.jpg&quot;</span>,<span class="string">&quot;1.webp&quot;</span>,<span class="string">&quot;-q 80&quot;</span>)</span><br><span class="line">  .then( <span class="function"><span class="params">res</span> =&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -457,19 +457,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,15 +477,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -16,7 +16,7 @@
 <meta property="og:description" content="听说Golang也非常长的一段时间了, 也很清楚Go的很多优缺点, 很早就有点想去尝试这一个Google推出来的自动垃圾回收的C语言的. 不过由于种种原因一直拖到了现在  简洁的并发 高效率的编程 整齐的代码格式化 静态化编译，直接运行">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-28T07:33:15.000Z">
-<meta property="article:modified_time" content="2021-04-01T08:30:43.339Z">
+<meta property="article:modified_time" content="2021-04-25T03:56:51.683Z">
 <meta property="article:author" content="QiaTia">
 <meta property="article:tag" content="杂谈">
 <meta property="article:tag" content="Go">
@@ -198,16 +198,16 @@
 <h1 id="安装-amp-amp-配置"><a href="#安装-amp-amp-配置" class="headerlink" title="安装 &amp;&amp; 配置"></a>安装 &amp;&amp; 配置</h1><p>由于众所周知的原因, Golang官方是一个不存在的404页面, 我们需要到国内的中文社区下载程序包然后直接安装就行 <a target="_blank" rel="noopener" href="https://studygolang.com/dl">studygolang</a></p>
 <p>代码编辑器这边就直接使用我一直再用的 Visual Studio Code, 不过这里安装Go的拓展后会提示去安装<code>gopls</code>和<code>go-outline</code>, 如果直接再VS code点击确认会一直安装失败, 需要我们手动去命令行安装  </p>
 <p>我这里是直接设置 goproxy 代理, 然后直接手动安装, 官方提示不要使用 -u.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go get golang.org/x/tools/gopls@latest</span><br><span class="line">go get -u -v github.com/ramya-rao-a/go-outline@latest</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go get golang.org/x/tools/gopls@latest</span><br><span class="line">go get -u -v github.com/ramya-rao-a/go-outline@latest</span><br></pre></td></tr></table></figure>
 
 <h1 id="开始编码"><a href="#开始编码" class="headerlink" title="开始编码"></a>开始编码</h1><h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>啥也别说, 先写一个hello world再说<br>新建一个main.go, 输入</p>
 <figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  fmt.Println(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后直接控制台直接运行</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ go run main.go </span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ go run main.go </span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
 
 <p>也可以打包为可执行的二进制文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ go build main.go</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ go build main.go</span><br></pre></td></tr></table></figure>
 
 <h3 id="包、变量和函数"><a href="#包、变量和函数" class="headerlink" title="包、变量和函数"></a>包、变量和函数</h3><h4 id="变量-amp-常量"><a href="#变量-amp-常量" class="headerlink" title="变量 &amp; 常量"></a>变量 &amp; 常量</h4><p>与 TypeScript 类似, Go中声明变量使用<code>var</code>关键字, 常量使用<code>const</code>关键字, 没有<code>let</code>哈, Go中的var不存在js中的问题, 不需要let了</p>
 <figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstName <span class="keyword">string</span></span><br><span class="line"><span class="keyword">var</span> firstName, lastName <span class="keyword">string</span></span><br><span class="line"><span class="keyword">var</span> age <span class="keyword">int</span></span><br><span class="line"><span class="keyword">const</span> HTTPStatusOK <span class="keyword">int</span> = <span class="number">200</span></span><br></pre></td></tr></table></figure>
@@ -275,7 +275,7 @@
 <h5 id="main-包"><a href="#main-包" class="headerlink" title="main 包"></a>main 包</h5><p>你可能注意到，在 Go 中，甚至最直接的程序都是包的一部分。 通常情况下，默认包是 main 包，即目前为止一直使用的包。 如果程序是 main 包的一部分，Go 会生成二进制文件。 运行该文件时，它将调用 main() 函数。</p>
 <p>换句话说，当你使用 main 包时，程序将生成独立的可执行文件。 但当程序非是 main 包的一部分时，Go 不会生成二进制文件。 它生成包存档文件（扩展名为 .a 的文件）。</p>
 <h5 id="创建包"><a href="#创建包" class="headerlink" title="创建包"></a>创建包</h5><p>在名为 calculator 的 $GOPATH/src 目录中创建新目录。 创建名为 sum.go 的文件。 树目录应如下列目录所示：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">src/</span><br><span class="line">  calculator/</span><br><span class="line">    sum.go</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">src/</span><br><span class="line">  calculator/</span><br><span class="line">    sum.go</span><br></pre></td></tr></table></figure>
 
 <p>用包的名称初始化 sum.go 文件：</p>
 <figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> calculator</span><br></pre></td></tr></table></figure>
@@ -310,7 +310,7 @@
 
 <p>请注意，import 语句使用所创建包的名称：calculator。 若要从该包调用 Sum 函数，你需要将包名称指定为 calculator.Sum。 最后，你现还可访问 Version 变量。 请按调用以下内容：calculator.Version。</p>
 <p>如果立即尝试运行程序，它将不起任何作用。 你需要通知 Go，你会使用模块来引用其他包。 为此，请在 $GOPATH/src/helloworld 目录中运行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod init helloworld</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go mod init helloworld</span><br></pre></td></tr></table></figure>
 
 <p>在上述命令中，helloworld 是项目名称。 此命令会创建一个新的 go.mod 文件，因此，树目录会如下所示：</p>
 <figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">src/</span><br><span class="line">  calculator/</span><br><span class="line">    <span class="keyword">go</span>.mod</span><br><span class="line">    sum.<span class="keyword">go</span></span><br><span class="line">  helloworld/</span><br><span class="line">    <span class="keyword">go</span>.mod</span><br><span class="line">    main.<span class="keyword">go</span></span><br></pre></td></tr></table></figure>
@@ -327,7 +327,7 @@
 <figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//github.com/myuser/calculator</span></span><br></pre></td></tr></table></figure>
 
 <p>你将通过标记存储库来对包进行版本化，如下所示：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag v0.1.0</span><br><span class="line">git push origin v0.1.0</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag v0.1.0</span><br><span class="line">git push origin v0.1.0</span><br></pre></td></tr></table></figure>
 
 <p>如果是想要使用你的包的开发人员（包括你自己）引用如下所述内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &quot;github.com&#x2F;myuser&#x2F;calculator&quot;</span><br></pre></td></tr></table></figure>
@@ -645,19 +645,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -669,15 +665,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
