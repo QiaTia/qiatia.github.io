@@ -6,24 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qiatia.github.io">
-  <title>拦截token验证与ref Token (Vue, Axios) | QiaTia`博客</title>
+  <title>Archives: 2021/10 | QiaTia`博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue + axios实现集中式管理token验证是我们开发中最常用到登陆会话机制, 他的诸多优缺点我这里九不做过多的叙述了,我主要说的就是他的实现方式了.由于项目是基于vuex开发的, 所以用备受好评的vuex作为我们的状态管理那是毫无悬念.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="拦截token验证与ref Token (Vue, Axios)">
-<meta property="og:url" content="http://qiatia.github.io/2019/05/30/token-axios/index.html">
+  <meta name="description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="QiaTia&#96;博客">
+<meta property="og:url" content="http://qiatia.github.io/archives/2021/10/index.html">
 <meta property="og:site_name" content="QiaTia&#96;博客">
-<meta property="og:description" content="vue + axios实现集中式管理token验证是我们开发中最常用到登陆会话机制, 他的诸多优缺点我这里九不做过多的叙述了,我主要说的就是他的实现方式了.由于项目是基于vuex开发的, 所以用备受好评的vuex作为我们的状态管理那是毫无悬念.">
+<meta property="og:description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.ax1x.com/2019/10/15/KC5Y79.png">
-<meta property="article:published_time" content="2019-05-30T04:28:50.000Z">
-<meta property="article:modified_time" content="2019-10-15T08:58:54.276Z">
 <meta property="article:author" content="QiaTia">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="vue">
-<meta property="article:tag" content="axios">
+<meta property="article:tag" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/10/15/KC5Y79.png">
   
     <link rel="alternative" href="/atom.xml" title="QiaTia`博客" type="application/atom+xml">
   
@@ -167,174 +161,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-token-axios" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      拦截token验证与ref Token (Vue, Axios)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/10/10/%E6%9C%80%E8%BF%91%E6%8A%98%E8%85%BELinux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2021-10-10T06:32:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-10</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/10/10/%E6%9C%80%E8%BF%91%E6%8A%98%E8%85%BELinux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/">最近折腾Linux服务器的命令记录</a>
     </h1>
   
 
-        
-        <a href="/2019/05/30/token-axios/" class="archive-article-date">
-  	<time datetime="2019-05-30T04:28:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vue + axios实现集中式管理<br>token验证是我们开发中最常用到登陆会话机制, 他的诸多优缺点我这里九不做过多的叙述了,我主要说的就是他的实现方式了.由于项目是基于vuex开发的, 所以用备受好评的vuex作为我们的状态管理那是毫无悬念.</p>
-<a id="more"></a>
-<h3 id="开使准备"><a href="#开使准备" class="headerlink" title="开使准备"></a>开使准备</h3><p>我们知道token一般都是由我们在用户登陆之后后端返回的, 我目前手上这个项目是登陆后会放回token与 user_key, 一般token只有几小时到几天的有效期,有效期过去我们可以凭借 user_key到指定的接口刷新获取到新的token, 而user_key过期之后也就意味着本次登陆已经完全过期了, 必须让用户重新登陆.</p>
-<h3 id="大致思路"><a href="#大致思路" class="headerlink" title="大致思路"></a>大致思路</h3><p>理清楚了思路, 代码实现起来九简单了不少:<br><img src="https://s2.ax1x.com/2019/10/15/KC5Y79.png" alt="流程图"><br>大致的处理应该也就这样了, 本人比较懒, 本地懒得做啥export_time判断了,全交给server做这种判断的活.自我觉得这样会比较安全点.</p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>/store.js   vue的状态管理文件, 主要集中管理token等用户信息</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"><span class="comment">// cookie 操作, 默认刷新页面需要从cookie里读取一些信息</span></span><br><span class="line"><span class="keyword">import</span> &#123; getToken, getKey, setToken, setKey &#125; <span class="keyword">from</span> <span class="string">&#x27;@/libs/util&#x27;</span></span><br><span class="line"><span class="comment">// 导入request</span></span><br><span class="line"><span class="keyword">import</span> &#123; get, post &#125; <span class="keyword">from</span> <span class="string">&#x27;@/libs/request&#x27;</span></span><br><span class="line"><span class="comment">// 需要在这里储存token等状态信息</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    state: &#123;</span><br><span class="line">        token: getToken(),</span><br><span class="line">        key: getKey(),</span><br><span class="line">        user: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        <span class="function"><span class="title">setToken</span>(<span class="params">state, val</span>)</span>&#123;</span><br><span class="line">            state.token = val</span><br><span class="line">            setToken(token)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">setKey</span>(<span class="params">state, val</span>)</span>&#123;</span><br><span class="line">            state.key = key</span><br><span class="line">            setKey(val)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="title">setUser</span>(<span class="params">state, val</span>)</span>&#123;</span><br><span class="line">            state.user = val</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    actions: &#123;</span><br><span class="line">        <span class="comment">// 登陆</span></span><br><span class="line">        handleLogin (&#123; commit &#125;, &#123;username,password&#125;) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            post(<span class="string">&#x27;/login&#x27;</span>,&#123;username, password&#125;).then(<span class="function">(<span class="params">&#123;data&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">                commit(<span class="string">&#x27;setKey&#x27;</span>, data.key)</span><br><span class="line">                commit(<span class="string">&#x27;setToken&#x27;</span>, data.token)</span><br><span class="line">                resolve()</span><br><span class="line">            &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">              <span class="built_in">console</span>.log(err)</span><br><span class="line">              reject(err)</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 退出登录</span></span><br><span class="line">        handleLogOut (&#123; commit &#125;) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">              commit(<span class="string">&#x27;setKey&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">              commit(<span class="string">&#x27;setToken&#x27;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">              commit(<span class="string">&#x27;setUser&#x27;</span>,&#123;&#125;)</span><br><span class="line">              resolve()</span><br><span class="line">            &#125;<span class="function"><span class="title">catch</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">              reject(e)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 获取用户相关信息</span></span><br><span class="line">        getUserInfo (&#123; commit &#125;) &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">              get(<span class="string">&#x27;/user/info&#x27;</span>).then(<span class="function">(<span class="params">&#123;data&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">                commit(<span class="string">&#x27;setUser&#x27;</span>, data)</span><br><span class="line">                resolve(data)</span><br><span class="line">              &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                reject(err)</span><br><span class="line">              &#125;)</span><br><span class="line">            &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">              reject(error)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">// 刷新Token</span></span><br><span class="line">        <span class="function"><span class="title">refToken</span>(<span class="params">&#123;state, commit &#125;</span>)</span>&#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">              post(<span class="string">&#x27;/refToken&#x27;</span>,&#123;<span class="attr">key</span>:state.key&#125;).then(<span class="function">(<span class="params">&#123;data&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">                commit(<span class="string">&#x27;setToken&#x27;</span>,data.token)</span><br><span class="line">                resolve(data)</span><br><span class="line">              &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                reject(err)</span><br><span class="line">              &#125;)</span><br><span class="line">            &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">              <span class="built_in">console</span>.error(<span class="string">&#x27;登陆信息过期, 请重新登陆&#x27;</span>);</span><br><span class="line">              reject(error)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>/libs/request.js  这个文件主要负责封装好全局请求, 以及错误拦截处理</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Qs <span class="keyword">from</span> <span class="string">&#x27;qs&#x27;</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;@/store&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 在请求前我们做点啥</span></span><br><span class="line"><span class="comment"> * 可以在这里做过期时间校验, 在这里我就不做啥了</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 拦截请求数据 &lt;=&gt; 带上 token</span></span><br><span class="line">    config.params.token = store.state.token;</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line">&#125;, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 接到数据我们做点啥</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;type&#125;</span> </span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span>: </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">axios.interceptors.response.use(<span class="function">(<span class="params">&#123;data,status&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">if</span>(<span class="params">status &gt;= <span class="number">200</span> &amp;&amp; status &lt;= <span class="number">401</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> data;  <span class="comment">//我们在这里直接放回数据的data, 直接是请求中服务器给的数据</span></span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span> (status === <span class="number">402</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">&#x27;登陆信息过期, 请重新登陆&#x27;</span>);</span><br><span class="line">    store.dispatch(<span class="string">&#x27;handleLogOut&#x27;</span>).then(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">      <span class="comment">// router.push(&#x27;login&#x27;);</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(data)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(data)      </span><br><span class="line">    <span class="comment">// Message.warning(&#x27;未知错误, 请重试&#x27;);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(data)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; <span class="attr">response</span>: &#123; status &#125;, config, &#125; = &#123;...error&#125;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">status !== <span class="number">401</span></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.warn(<span class="string">&#x27;Error Code&#x27;</span>+status)</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(error)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.warn(<span class="string">&#x27;Token 口令过期,正在重新获取&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> store.dispatch(<span class="string">&#x27;refToken&#x27;</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// 带上新token重新请求</span></span><br><span class="line">      config.params.token = store.state.token;</span><br><span class="line">      <span class="keyword">return</span> axios(config)</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.error(res)</span><br><span class="line">      store.dispatch(<span class="string">&#x27;handleLogOut&#x27;</span>);</span><br><span class="line">      <span class="comment">// router.push(&#123;name: &#x27;login&#x27;&#125;);</span></span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="function"><span class="title">request</span>(<span class="params">url, data, method</span>)</span>&#123;</span><br><span class="line">    retrun axios(&#123;url ,<span class="attr">data</span>:Qs.stringify(data),method&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="function"><span class="title">post</span>(<span class="params">url,data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> request(url,data,<span class="string">&#x27;post&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="function"><span class="title">post</span>(<span class="params">url,data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> request(url,data,<span class="string">&#x27;get&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>@/libs/uilt.js  对缓存cookie的操作</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入js-cookie</span></span><br><span class="line"><span class="keyword">import</span> Cookies <span class="keyword">from</span> <span class="string">&#x27;js-cookie&#x27;</span></span><br><span class="line"><span class="keyword">const</span> cookieExpires = <span class="number">7</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> USER_KEY = <span class="string">&#x27;key&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> TOKEN = <span class="string">&#x27;token&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> setKey = <span class="function">(<span class="params">val</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Cookies.set(USER_KEY, val, &#123; <span class="attr">expires</span>: cookieExpires || <span class="number">1</span> &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getKey = <span class="function">()=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> user_key = Cookies.get(USER_KEY)</span><br><span class="line">  <span class="keyword">if</span> (user_key) <span class="keyword">return</span> user_key</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> setToken=<span class="function">(<span class="params">val</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Cookies.set(TOKEN, val, &#123; <span class="attr">expires</span>: cookieExpires || <span class="number">1</span> &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getToken=<span class="function">()=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> token = Cookies.get(TOKEN)</span><br><span class="line">  <span class="keyword">if</span> (token) <span class="keyword">return</span> token</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>大概就这样了, 收到数据拦截判断状态码, 刷新token重新发送本次请求,在重新返回数据, 主要是为了兼容以前的代码, 本来就是接手的项目, 只能这样弄了, 下一次就要去做微信小程序的封装.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://qiatia.github.io/2019/05/30/token-axios/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2019/06/03/token-mini-app/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          拦截token验证与ref Token (微信小程序)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/05/30/async-await/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">async 与 await</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-git title: 日志风格指南">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/10/10/Commit%E6%97%A5%E5%BF%97%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/" class="archive-article-date">
+  	<time datetime="2021-10-10T06:29:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-10</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-
-
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -357,8 +266,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
