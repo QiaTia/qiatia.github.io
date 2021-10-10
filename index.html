@@ -184,20 +184,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>前几天我的服务器的web服务完全炸裂了, 以前一直没空没发现原因, 刚刚去查了下内存才发现原来是内存不足内核自动把MariaDB进程关掉了, 然后依赖的Node服务也全部被清理掉了. 还是有必要给docker服务加上内存限制, 跑的慢一点完全没关系的</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看服务列表</span></span><br><span class="line">docker ps </span><br><span class="line"></span><br><span class="line"><span class="comment">#停止$id服务</span></span><br><span class="line">docker stop <span class="variable">$id</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#开始运行$id服务</span></span><br><span class="line">docker start <span class="variable">$id</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#重启$id服务</span></span><br><span class="line">docker restart <span class="variable">$id</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#查看$id服务的日志</span></span><br><span class="line">docker logs <span class="variable">$id</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看服务的运行情况, 包括cpu 内存占用</span></span><br><span class="line">docker stats </span><br><span class="line"></span><br><span class="line"><span class="comment">#设置$id服务内存受限并且限制最大内存占用180m</span></span><br><span class="line">docker update -m 180m --memory-swap -1 <span class="variable">$id</span> </span><br></pre></td></tr></table></figure>
-
-<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><p>最近使用Vue3搭建的一个后台管理模板必须要NodeJS14才能编译运行, 研究了很久才把NodeJS升级到了14发现PM2又不兼容, 会提示一些权限问题么, 算了还是撤回来把. 我已经习惯安逸了.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yarn add -g n <span class="comment">#全局安装N模块管理NodeJS</span></span><br><span class="line">n stable <span class="comment">#安装最新稳定版Node</span></span><br><span class="line">n latest <span class="comment">#安装最新版Node</span></span><br><span class="line">n 14.17.0 <span class="comment">#安装指定版本Node</span></span><br><span class="line">n rm 14.17.0 <span class="comment">#删除某个版本Node</span></span><br><span class="line">n ls <span class="comment">#查看已经安装的node版本</span></span><br><span class="line">n <span class="comment">#输入n回车  出现node版本列表，上下键移动选择切换的版本后回车(切换非n安装的node版本会报错，删掉，使用n安装即可)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Linux系统"><a href="#Linux系统" class="headerlink" title="Linux系统"></a>Linux系统</h2><p>找问题的时候找了很多需要查看系统信息的命令</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">top <span class="comment">#查看cpu负载</span></span><br><span class="line">cat /proc/cpuinfo <span class="comment">#查看cpu信息</span></span><br><span class="line">free <span class="comment">#系统内存信息</span></span><br><span class="line">cat /proc/meminfo <span class="comment">#查看内存信息</span></span><br><span class="line">fdisk -l <span class="comment">#查看磁盘信息</span></span><br><span class="line">df <span class="comment">#查看磁盘使用情况</span></span><br><span class="line">du --max-depth=1 -h <span class="comment">#查看当前目录文件夹情况</span></span><br><span class="line">du --max-depth=1 -h  /data/ <span class="comment">#指定目录</span></span><br><span class="line">du -sh /data/ <span class="comment">#计算文件夹大小</span></span><br><span class="line">reboot <span class="comment">#重启系统</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h2><p>系统内存不太够了, 我想把一些软件停止然后卸载了</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除软件包</span></span><br><span class="line">yum remove redis -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出已安装的软件包</span></span><br><span class="line">yum list installed</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已安装的某软件包</span></span><br><span class="line">yum list installed redis</span><br></pre></td></tr></table></figure>
-
-<h2 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h2><p>系统重启之后虽然nginx静态服务器还是再工作, 但是配置的一些代理完全没工作了,  这个时候nginx -s reload重启无效, 需要重新启动下nginx的守护进程</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#启动nginx</span></span><br><span class="line">systemctl start nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止nginx</span></span><br><span class="line">systemctl stop nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启nginx</span></span><br><span class="line">systemctl restart nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死一个服务的所有子进程</span></span><br><span class="line">systemctl <span class="built_in">kill</span> <span class="variable">$service</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务开机自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> <span class="variable">$service</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启系统</span></span><br><span class="line">systemctl reboot</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭系统，切断电源</span></span><br><span class="line">systemctl poweroff</span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2021/10/10/%E6%9C%80%E8%BF%91%E6%8A%98%E8%85%BELinux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/#more">more >></a>
+        
       
 
       
@@ -258,11 +247,29 @@
 
 
   
-    <article id="git title: 日志风格指南-Commit日志风格指南" class="article article-type-git title: 日志风格指南  article-index" itemscope itemprop="blogPost">
+    <article id="post-Commit-日志风格指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/18/Commit-%E6%97%A5%E5%BF%97%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/">Git Commit 日志风格指南</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/18/Commit-%E6%97%A5%E5%BF%97%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/" class="archive-article-date">
+  	<time datetime="2021-08-18T06:29:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-18</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>我们的所有项目都使用 Git 做版本管理，这篇文档用于规范我们的 commit 日志。主要内容参考了 Conventional Commits 和 Angular Contributing Guide，按照我们的情况进行了增删。</p>
+        
+          <a class="article-more-a" href="/2021/08/18/Commit-%E6%97%A5%E5%BF%97%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/#more">more >></a>
         
       
 
@@ -271,11 +278,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/10/10/Commit%E6%97%A5%E5%BF%97%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/08/18/Commit-%E6%97%A5%E5%BF%97%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/">展开全文 >></a>
         </p>
       
 
@@ -1056,6 +1074,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -1096,11 +1118,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
