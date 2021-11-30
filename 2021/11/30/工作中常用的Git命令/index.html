@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qiatia.github.io">
-  <title>最近折腾Linux服务器的命令记录 | QiaTia`博客</title>
+  <title>工作中常用的Git命令 | QiaTia`博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Docker前几天我的服务器的web服务完全炸裂了, 以前一直没空没发现原因, 刚刚去查了下内存才发现原来是内存不足内核自动把MariaDB进程关掉了, 然后依赖的Node服务也全部被清理掉了. 还是有必要给docker服务加上内存限制, 跑的慢一点完全没关系的">
+  <meta name="description" content="Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。 下面是工作中常用的几条 Git 命令，平时开发掌握这几条足矣。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最近折腾Linux服务器的命令记录">
-<meta property="og:url" content="http://qiatia.github.io/2021/10/10/%E6%9C%80%E8%BF%91%E6%8A%98%E8%85%BELinux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="工作中常用的Git命令">
+<meta property="og:url" content="http://qiatia.github.io/2021/11/30/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84Git%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="QiaTia&#96;博客">
-<meta property="og:description" content="Docker前几天我的服务器的web服务完全炸裂了, 以前一直没空没发现原因, 刚刚去查了下内存才发现原来是内存不足内核自动把MariaDB进程关掉了, 然后依赖的Node服务也全部被清理掉了. 还是有必要给docker服务加上内存限制, 跑的慢一点完全没关系的">
+<meta property="og:description" content="Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。 下面是工作中常用的几条 Git 命令，平时开发掌握这几条足矣。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-10T06:32:37.000Z">
-<meta property="article:modified_time" content="2021-10-10T06:38:53.489Z">
+<meta property="article:published_time" content="2021-11-30T14:29:29.000Z">
+<meta property="article:modified_time" content="2021-11-30T14:33:15.793Z">
 <meta property="article:author" content="QiaTia">
-<meta property="article:tag" content="杂谈">
-<meta property="article:tag" content="ffmpeg">
-<meta property="article:tag" content="linux">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="QiaTia`博客" type="application/atom+xml">
@@ -165,41 +163,134 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-最近折腾Linux服务器的命令记录" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-工作中常用的Git命令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      最近折腾Linux服务器的命令记录
+      工作中常用的Git命令
     </h1>
   
 
         
-        <a href="/2021/10/10/%E6%9C%80%E8%BF%91%E6%8A%98%E8%85%BELinux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2021-10-10T06:32:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-10</time>
+        <a href="/2021/11/30/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84Git%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2021-11-30T14:29:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>前几天我的服务器的web服务完全炸裂了, 以前一直没空没发现原因, 刚刚去查了下内存才发现原来是内存不足内核自动把MariaDB进程关掉了, 然后依赖的Node服务也全部被清理掉了. 还是有必要给docker服务加上内存限制, 跑的慢一点完全没关系的</p>
+        <p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
+<p>下面是工作中常用的几条 Git 命令，平时开发掌握这几条足矣。</p>
 <a id="more"></a>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看服务列表</span></span><br><span class="line">docker ps </span><br><span class="line"></span><br><span class="line"><span class="comment">#停止$id服务</span></span><br><span class="line">docker stop <span class="variable">$id</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#开始运行$id服务</span></span><br><span class="line">docker start <span class="variable">$id</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#重启$id服务</span></span><br><span class="line">docker restart <span class="variable">$id</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#查看$id服务的日志</span></span><br><span class="line">docker logs <span class="variable">$id</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看服务的运行情况, 包括cpu 内存占用</span></span><br><span class="line">docker stats </span><br><span class="line"></span><br><span class="line"><span class="comment">#设置$id服务内存受限并且限制最大内存占用180m</span></span><br><span class="line">docker update -m 180m --memory-swap -1 <span class="variable">$id</span> </span><br></pre></td></tr></table></figure>
+<h2 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h2><p>Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
+<h3 id="显示当前的Git配置"><a href="#显示当前的Git配置" class="headerlink" title="显示当前的Git配置"></a>显示当前的Git配置</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑Git配置文件</span></span><br><span class="line">$ git config -e [--global]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置提交代码时的用户信息</span></span><br><span class="line">$ git config [--global] user.name <span class="string">&quot;[name]&quot;</span></span><br><span class="line">$ git config [--global] user.email <span class="string">&quot;[email address]&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><p>最近使用Vue3搭建的一个后台管理模板必须要NodeJS14才能编译运行, 研究了很久才把NodeJS升级到了14发现PM2又不兼容, 会提示一些权限问题么, 算了还是撤回来把. 我已经习惯安逸了.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yarn add -g n <span class="comment">#全局安装N模块管理NodeJS</span></span><br><span class="line">n stable <span class="comment">#安装最新稳定版Node</span></span><br><span class="line">n latest <span class="comment">#安装最新版Node</span></span><br><span class="line">n 14.17.0 <span class="comment">#安装指定版本Node</span></span><br><span class="line">n rm 14.17.0 <span class="comment">#删除某个版本Node</span></span><br><span class="line">n ls <span class="comment">#查看已经安装的node版本</span></span><br><span class="line">n <span class="comment">#输入n回车  出现node版本列表，上下键移动选择切换的版本后回车(切换非n安装的node版本会报错，删掉，使用n安装即可)</span></span><br></pre></td></tr></table></figure>
+<h2 id="git新建代码库"><a href="#git新建代码库" class="headerlink" title="git新建代码库"></a>git新建代码库</h2><p>1、情况一：在远程存在有项目，在本地下载一个项目：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> [url]</span><br></pre></td></tr></table></figure>
 
-<h2 id="Linux系统"><a href="#Linux系统" class="headerlink" title="Linux系统"></a>Linux系统</h2><p>找问题的时候找了很多需要查看系统信息的命令</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">top <span class="comment">#查看cpu负载</span></span><br><span class="line">cat /proc/cpuinfo <span class="comment">#查看cpu信息</span></span><br><span class="line">free <span class="comment">#系统内存信息</span></span><br><span class="line">cat /proc/meminfo <span class="comment">#查看内存信息</span></span><br><span class="line">fdisk -l <span class="comment">#查看磁盘信息</span></span><br><span class="line">df <span class="comment">#查看磁盘使用情况</span></span><br><span class="line">du --max-depth=1 -h <span class="comment">#查看当前目录文件夹情况</span></span><br><span class="line">du --max-depth=1 -h  /data/ <span class="comment">#指定目录</span></span><br><span class="line">du -sh /data/ <span class="comment">#计算文件夹大小</span></span><br><span class="line">reboot <span class="comment">#重启系统</span></span><br></pre></td></tr></table></figure>
+<p>2、情况二：在当前目录新建一个Git代码库，一般流程如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">touch README.md  //新建说明文件</span><br><span class="line">git init //在当前项目中生成本地git管理，并建立一个隐藏.git项目</span><br><span class="line">git add .  //添加</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span> //提交到本地源码库，并附加提交注释</span><br><span class="line">git remote add origin [url] //添加到远程项目,别名为origin</span><br><span class="line">git push -u origin master //把本地源码库push到github别名为origin的远程项目中，确认提交。</span><br><span class="line">git remote rm origin //断开远程仓库连接</span><br></pre></td></tr></table></figure>
 
-<h2 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h2><p>系统内存不太够了, 我想把一些软件停止然后卸载了</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除软件包</span></span><br><span class="line">yum remove redis -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出已安装的软件包</span></span><br><span class="line">yum list installed</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已安装的某软件包</span></span><br><span class="line">yum list installed redis</span><br></pre></td></tr></table></figure>
+<h2 id="git提交代码库"><a href="#git提交代码库" class="headerlink" title="git提交代码库"></a>git提交代码库</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git status 查看工作区代码相对于暂存区的差别；</span><br><span class="line">git add . 将当前目录下修改的所有代码从工作区添加到暂存区，. 代表当前目录；</span><br><span class="line">git commit -m <span class="string">&#x27;注释&#x27;</span> 将缓存区内容添加到本地仓库；</span><br><span class="line">git pull origin master 先将远程仓库master中的信息同步到本地仓库master中；</span><br><span class="line">git push origin master 将本地版本库推送到远程服务器。</span><br><span class="line">origin是远程主机，master表示是远程服务器上的master分支和本地分支重名的简写，分支名可以修改。</span><br></pre></td></tr></table></figure>
 
-<h2 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h2><p>系统重启之后虽然nginx静态服务器还是再工作, 但是配置的一些代理完全没工作了,  这个时候nginx -s reload重启无效, 需要重新启动下nginx的守护进程</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#启动nginx</span></span><br><span class="line">systemctl start nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止nginx</span></span><br><span class="line">systemctl stop nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启nginx</span></span><br><span class="line">systemctl restart nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死一个服务的所有子进程</span></span><br><span class="line">systemctl <span class="built_in">kill</span> <span class="variable">$service</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置服务开机自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> <span class="variable">$service</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启系统</span></span><br><span class="line">systemctl reboot</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭系统，切断电源</span></span><br><span class="line">systemctl poweroff</span><br></pre></td></tr></table></figure>
+<h2 id="git分支操作"><a href="#git分支操作" class="headerlink" title="git分支操作"></a>git分支操作</h2><h3 id="创建分支："><a href="#创建分支：" class="headerlink" title="创建分支："></a>创建分支：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;branch_name&gt; <span class="comment">#创建指定名称的分支</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查看分支："><a href="#查看分支：" class="headerlink" title="查看分支："></a>查看分支：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="comment">#查看所有分支，* 号代表当前工作分支</span></span><br><span class="line">git branch -v <span class="comment">#查看分支详情，包括分支指向的commitId及提交信息</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="切换分支："><a href="#切换分支：" class="headerlink" title="切换分支："></a>切换分支：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;branch_name&gt; <span class="comment">#切换到指定分支</span></span><br><span class="line">git checkout -b &lt;branch_name&gt; <span class="comment">#创建并切换到指定分支</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：切换到dev分支，然后添加dev.txt文件并进行提交，在dev分支上创建并切换到test分支。</p>
+<h3 id="删除分支："><a href="#删除分支：" class="headerlink" title="删除分支："></a>删除分支：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -d &lt;branch_name&gt;.<span class="comment">#删除一个干净的分支(即相对当前分支而言该分支没有新的提交记录)</span></span><br><span class="line">git branch -D &lt;branch_name&gt;.<span class="comment">#强制删除一个分支，该分支有没有合并到当前分支的提交记录</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：删除分支前都需要先切换到其他分支才能进行删除操作</p>
+<p>示例：在dev分支上删除test分支，test分支相对于dev来说是干净的分支，所以可以直接删除，然后切换到master分支，删除dev分支，此时需要进行强制删除。</p>
+<h3 id="分支恢复："><a href="#分支恢复：" class="headerlink" title="分支恢复："></a>分支恢复：</h3><p>思路：对于已经有提交记录的分支删除后，实际上只是删除指针，commit记录还保留，如果想恢复，需要使用git reflog查找该分支指向的commitId，然后根据commitId创建新的分支</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;branch_name&gt; &lt;hash_val&gt; <span class="comment">#根据指定commit创建新分支</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：恢复已经删除的dev分支，该分支新增了dev.txt文件</p>
+<h3 id="重命名分支："><a href="#重命名分支：" class="headerlink" title="重命名分支："></a>重命名分支：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -m &lt;branch_name&gt; newname</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支合并："><a href="#分支合并：" class="headerlink" title="分支合并："></a>分支合并：</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branch_name&gt; <span class="comment">#将指定分支合并到当前分支</span></span><br></pre></td></tr></table></figure>
+
+<p>如果两个分支没有产生分叉情况，那么会进行快速合并，即fast-forward方式，它并不会产生新的commitId，只是改变了指针的指向，产生分叉合并可能会有冲突情况。</p>
+<p>示例：合并pro分支到master分支，此时合并为fast-forward方式</p>
+<h3 id="分支合并细节"><a href="#分支合并细节" class="headerlink" title="分支合并细节"></a>分支合并细节</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --no-ff -m <span class="string">&quot;msg&quot;</span> &lt;branch_name&gt; <span class="comment">#合并分支时禁用Fast forward模式</span></span><br></pre></td></tr></table></figure>
+
+<p>我们知道如果使用fast-forward方式进行分支合并，只是简单改变了分支指针，而不会产生新的commit记录。<br>为了保证合并数据的完整性，我们也可以在合并时指定不使用fast-forward方式，使用 –no-ff 选项。这样，在merge时就会生成一个新的commit，从日志上就可以看到分支合并记录了。</p>
+<h2 id="git合并代码"><a href="#git合并代码" class="headerlink" title="git合并代码"></a>git合并代码</h2><p>我们可能需要将A分支的代码合并到B分支，如何操作呢？</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先切到分支B</span></span><br><span class="line"></span><br><span class="line">git checkout B</span><br><span class="line"></span><br><span class="line"><span class="comment">#执行合并命令</span></span><br><span class="line">git merge A</span><br><span class="line"></span><br><span class="line"><span class="comment">#merge之后如果有冲突，手动解决冲突(其实就是看哪些要哪些不要，手动操作取舍），然后执行：</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m 注释</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果没有冲突，执行推送到远程</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<h3 id="git本地回退代码"><a href="#git本地回退代码" class="headerlink" title="git本地回退代码"></a>git本地回退代码</h3><p>适用场景：我不小心把不该提交的代码提交到了本地，例如TaskListener这个类改了之后，不能提交，一不小心被我commit到了本地（还没有推送到远程）。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<p>用于查看我们修改提交的快照记录（commit记录），然后会有个commit修改记录的id编号，该命令显示从最近到最远的提交日志，我们可以看到3次提交记录.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b xxx commit-id</span><br></pre></td></tr></table></figure>
+
+<p>把代码回退到一个新的分支，这样不要影响你的开发分支。或者直接</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure>
+
+<p>回退到上一个提交的版本，HEAD^^回退到上上个版本。或者</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard cmmit-id</span><br></pre></td></tr></table></figure>
+
+<p>回退到指定commit id版本</p>
+<p>如果你想回到会退前的版本，可以使用如下命令恢复：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<p>查看你的提交记录，找到你要回去的版本的commit id，指定id号回退回去就行了。如下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 3b52ede</span><br></pre></td></tr></table></figure>
+
+<h2 id="git本地缓存"><a href="#git本地缓存" class="headerlink" title="git本地缓存"></a>git本地缓存</h2><p>当我们在分支上进行代码开发时，有可能会接到突发需求，而当前的代码尚未完成，所以还不能直接提交。为了解决这样的问题，git就提供了分支暂存的机制，可以将开发一半的分支进行保存，在适当的时候进行代码恢复。<br>git stash save “save message”  : 执行存储时，添加备注，方便查找，只有git stash 也要可以的，但查找时不方便识别。<br>这时候再执行git status，会提示：nothing to commit, working tree clean<br>然后你就可以切到其他分支做别的事情了。<br>过后你再回到这个分支，执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list  <span class="comment">#查看stash了哪些存储</span></span><br></pre></td></tr></table></figure>
+
+<p>怎么恢复刚才stash save的东西呢？</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply stash@&#123;0&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中， “stash@{0}“是根据备注指定到版本，如果省略不写的话，默认取”stash@{0}”，即最新的一次save</p>
+<p>如果觉得stash list记录太多了，想要清除，执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash clear <span class="comment">#删除所有缓存的stash</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="其它stash非常用命令："><a href="#其它stash非常用命令：" class="headerlink" title="其它stash非常用命令："></a>其它stash非常用命令：</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git stash show <span class="comment">#显示做了哪些改动，默认show第一个存储,如果要显示其他存贮，后面加stash@&#123;$num&#125;，比如第二个 git stash show stash@&#123;1&#125;</span></span><br><span class="line">git stash show -p <span class="comment">#显示第一个存储的改动，如果想显示其他存存储，命令：git stash show  stash@&#123;$num&#125;  -p ，比如第二个：git stash show  stash@&#123;1&#125;  -p</span></span><br><span class="line">git stash pop <span class="comment">#命令恢复之前缓存的工作目录，将缓存堆栈中的对应stash删除，并将对应修改应用到当前的工作目录下,默认为第一个stash,即stash@&#123;0&#125;，如果要应用并删除其他stash，命令：git stash pop stash@&#123;$num&#125; ，比如应用并删除第二个：git stash pop stash@&#123;1&#125;</span></span><br><span class="line">git stash drop stash@&#123;<span class="variable">$num</span>&#125; <span class="comment">#丢弃stash@&#123;$num&#125;存储，从列表中删除这个存储</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="git的tag功能"><a href="#git的tag功能" class="headerlink" title="git的tag功能"></a>git的tag功能</h2><p>git 下打标签其实有2种情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">轻量级的：它其实是一个独立的分支,或者说是一个不可变的分支.指向特定提交对象的引用</span><br><span class="line">带附注的：实际上是存储在仓库中的一个独立对象，它有自身的校验和信息，包含着标签的名字，标签说明，标签本身也允许使用 GNU Privacy Guard (GPG) 来签署或验证,电子邮件地址和日期，一般我们都建议使用含附注型的标签，以便保留相关信息</span><br></pre></td></tr></table></figure>
+
+<p>所以我们推荐使用第二种标签形式</p>
+<p> 创建tag</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a V1.2 -m <span class="string">&#x27;release 1.2&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的命令我们成功创建了本地一个版本 V1.2 ,并且添加了附注信息 ‘release 1.2’</p>
+<p>指定历史commit迁出到tag, 我们先使用git log找到commitID或者hard</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=oneline --abbrev-commit</span><br><span class="line">git tag -a v1.2 --hard / commitID -m <span class="string">&quot;release 1.2&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p> 查看tag</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure>
+
+<p>要显示附注信息,我们需要用 show 指令来查看</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git show V1.2</span><br></pre></td></tr></table></figure>
+
+<p>但是目前这个标签仅仅是提交到了本地git仓库.如何同步到远程代码库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
+
+<p>如果刚刚同步上去,你缺发现一个致命bug ,需要重新打版本,现在还为时不晚.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d V1.2</span><br></pre></td></tr></table></figure>
+
+<p>到这一步我们只是删除了本地 V1.2的版本,可是线上V1.2的版本还是存在,如何办?这时我们可以推送的空的同名版本到线下,达到删除线上版本的目标:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :refs/tags/V1.2</span><br></pre></td></tr></table></figure>
+
+<p>如何获取远程版本?</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin tag V1.2</span><br></pre></td></tr></table></figure>
+
+<p>这样我们可以精准拉取指定的某一个版本。</p>
+<h2 id="git-bash常用命令概况"><a href="#git-bash常用命令概况" class="headerlink" title="git-bash常用命令概况"></a>git-bash常用命令概况</h2><h3 id="1、git-bash命令"><a href="#1、git-bash命令" class="headerlink" title="1、git-bash命令"></a>1、git-bash命令</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="comment">#llist 查看当前目录下的内容</span></span><br><span class="line"><span class="built_in">cd</span> <span class="comment">#change directory 更改运行目录（文件名不区分大小写）</span></span><br><span class="line"><span class="built_in">pwd</span> <span class="comment">#print working directory 输出git-bash运行的绝对路径</span></span><br><span class="line">mkdir <span class="comment">#make directory 创建目录（文件夹）</span></span><br><span class="line">touch 创建文件</span><br><span class="line">rm <span class="comment">#remove 删除文件</span></span><br><span class="line">clear 清屏</span><br><span class="line"><span class="built_in">history</span> 查询命令输入历史（clear不会清除历史）</span><br><span class="line"><span class="built_in">exit</span> 退出 git-bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、安装及测试阶段"><a href="#2、安装及测试阶段" class="headerlink" title="2、安装及测试阶段"></a>2、安装及测试阶段</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config -l 查看本机配置</span><br><span class="line">git config --global user.name <span class="string">&quot;caobingyong&quot;</span> 设置本机用户名称</span><br><span class="line">git config --global user.email <span class="string">&quot;caobingyong.tjad.cn&quot;</span> 设置本机用户邮箱</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;caobingyong@tjad.cn&quot;</span> 生成SSH公钥（每个机器对应一个公钥）</span><br><span class="line">ssh -T git@gitee.com <span class="comment">#@github.com 测试电脑与服务器的连接</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3、Git仓库管理操作"><a href="#3、Git仓库管理操作" class="headerlink" title="3、Git仓库管理操作"></a>3、Git仓库管理操作</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git init 创建全新的仓库</span><br><span class="line">git <span class="built_in">log</span> 查看提交历史</span><br><span class="line">git <span class="built_in">clone</span> [url] <span class="comment"># https://gitee.com/kuangstudy/openclass.git 克隆远程仓库</span></span><br><span class="line">git status [filename] <span class="comment">#文件的三种状态 查询文件状态</span></span><br><span class="line">git add . . 为添加所有更改到暂存区</span><br><span class="line">git commit -m <span class="string">&quot;描述文字&quot;</span> 提交到本地仓库</span><br><span class="line">git remote add origin [项目的SSH] 本地仓库与远程仓库关联</span><br><span class="line">git pull --rebase origin master 从远程master分支拉取代码与本地仓库合并，保证本地文件为绿色</span><br><span class="line">git push -u origin master 推送到远程master分支（关联本地与远程的master分支）</span><br></pre></td></tr></table></figure>
 
       
 
@@ -213,15 +304,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ffmpeg</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -277,7 +360,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://qiatia.github.io/2021/10/10/%E6%9C%80%E8%BF%91%E6%8A%98%E8%85%BELinux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qiatia.github.io/2021/11/30/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84Git%E5%91%BD%E4%BB%A4/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,18 +374,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/11/30/%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84Git%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          工作中常用的Git命令
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/08/18/Commit-%E6%97%A5%E5%BF%97%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Git Commit 日志风格指南</div>
+    <a href="/2021/10/10/%E6%9C%80%E8%BF%91%E6%8A%98%E8%85%BELinux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最近折腾Linux服务器的命令记录</div>
       <i class="icon-circle-right"></i>
     </a>
   
