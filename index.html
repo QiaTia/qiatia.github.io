@@ -163,6 +163,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-UNI-APP和小程序之蓝牙标签打印机之路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/14/UNI-APP%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E8%93%9D%E7%89%99%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%8B%E8%B7%AF/">UNI-APP和小程序之蓝牙标签打印机之路</a>
+    </h1>
+  
+
+        
+        <a href="/2022/06/14/UNI-APP%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E8%93%9D%E7%89%99%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%8B%E8%B7%AF/" class="archive-article-date">
+  	<time datetime="2022-06-14T12:29:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="搜素设备"><a href="#搜素设备" class="headerlink" title="搜素设备"></a>搜素设备</h3><p>根据官方文档的蓝牙指引开始, 我们首先初始化蓝牙 <code>uni.openBluetoothAdapter</code>, 然后在成功之后就可以监听蓝牙状态变化<code>uni.onBluetoothAdapterStateChange</code>和监听蓝牙连接和断开<code>uni.onBLEConnectionStateChange</code>(这里需要注意, 这个方法在APP上可能无效, 还是要在指定时间维护状态), 再监听搜索到新设备的回调<code>uni.onBluetoothDeviceFound</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">uni.openBluetoothAdapter(&#123;</span><br><span class="line">  success: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    uni.onBluetoothAdapterStateChange(<span class="function">(<span class="params">&#123; available, discovering &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      log(<span class="string">&#x27;蓝牙状态发生变化&#x27;</span>, &#123; available, discovering &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    uni.onBluetoothDeviceFound(<span class="function">(<span class="params">&#123; devices &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      log(<span class="string">&#x27;找到新设备!&#x27;</span>);</span><br><span class="line">      <span class="comment">// 在这里我们可以对搜索到的设备进行过滤</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">/** 设备链接或断开时 */</span></span><br><span class="line">    uni.onBLEConnectionStateChange(<span class="keyword">async</span> (&#123; connected &#125;) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (!connected) &#123;</span><br><span class="line">        log(<span class="string">&#x27;设备已断开链接!&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    uni.startBluetoothDevicesDiscovery(&#123;</span><br><span class="line">      <span class="function"><span class="title">success</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        log(<span class="string">&quot;开始搜索设备!&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err.errCode == <span class="number">10001</span>) &#123;</span><br><span class="line">      log(<span class="string">&#x27;蓝牙初始化失败, 请检查系统权限!&#x27;</span>, err);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>成功注册好回调函数之后, 再调用开始搜索周围设备方法<code>uni.startBluetoothDevicesDiscovery</code>开始搜索, 这里可以指定服务ID, 搜索出来的设备就可以自动过滤.</p>
+<h3 id="连接设备"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备</h3><p>搜索到指定设备之后, 就可以链接设备了, 直接调用<code>uni.createBLEConnection</code>, 通过搜索列表获取到的设备ID连接, 然后就可以获取蓝牙服务和特征值, 然后通过<code>uni.notifyBLECharacteristicValueChange</code>启用低功耗蓝牙设备特征值变化时的notify功能，订阅特征值(UniAPP存在一个问题, 连接设备之后不能立即获取服务, 会获取不到, 需要设置3秒左右的延迟). </p>
+<p>如果还不理解蓝牙协议服务和特征值可以查看 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/asam/p/8676369.html">BLE4.0教程二 蓝牙协议之服务与特征值分析</a></p>
+<p>```javascript<br>async function onConnect(deviceId) {<br>  await new Promise((success, fail) =&gt; {<br>    uni.createBLEConnection({<br>      deviceId: deviceId,<br>      timeout,<br>      success,<br>      fail,<br>    });<br>  });<br>  // #ifdef APP-PLUS<br>  await sleep(3e3);<br>  // #endif<br>  const { services } =  await new Promise((success, fail) =&gt; {<br>    uni.getBLEDeviceServices({ success, fail, deviceId })<br>  });<br>  const { characteristics } = await new Promise((success, fail) =&gt; {<br>    uni.getBLEDeviceCharacteristics({ success, fail, deviceId, serviceId: services[0].uuid })<br>  });<br>  await new Promise((success, fail) =&gt; {<br>    uni.notifyBLECharacteristicValueChange({<br>        state: true,<br>        deviceId,<br>        serviceId: services[0].uuid,<br>        characteristicI</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/06/14/UNI-APP%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E8%93%9D%E7%89%99%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%8B%E8%B7%AF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-封装实现refToken对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -856,82 +936,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/28/%E5%88%9D%E8%AF%86Golang/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-送给自己的开年礼物-小米11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/13/%E9%80%81%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BC%80%E5%B9%B4%E7%A4%BC%E7%89%A9-%E5%B0%8F%E7%B1%B311/">送给自己的开年礼物 - 小米11</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/13/%E9%80%81%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BC%80%E5%B9%B4%E7%A4%BC%E7%89%A9-%E5%B0%8F%E7%B1%B311/" class="archive-article-date">
-  	<time datetime="2021-03-13T07:26:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本来呢，这日子过的好好的，就是那天不小心去看了红米k40的发布会，那个价格，那个配置，真的香到爆炸啊，看看了手上这台屏幕都碎了的Honor V10，作为一台17年发布的手机，他真的老了哇，WIFI信号极差，同一个地方链接同一个WIFI，我同事人家v30畅玩玩着完全不卡顿，我这就一会儿就是460，啥也别说了，既然早就看他不顺眼哪就换呗</p>
-        
-          <a class="article-more-a" href="/2021/03/13/%E9%80%81%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BC%80%E5%B9%B4%E7%A4%BC%E7%89%A9-%E5%B0%8F%E7%B1%B311/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/13/%E9%80%81%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E5%BC%80%E5%B9%B4%E7%A4%BC%E7%89%A9-%E5%B0%8F%E7%B1%B311/">展开全文 >></a>
         </p>
       
 
