@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qiatia.github.io">
-  <title>UNI-APP和小程序之蓝牙标签打印机之路 | QiaTia`博客</title>
+  <title>蓝牙打印机 - TSPL协议 | QiaTia`博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="公司最近有一个项目需求需要标签打印机打印出标签来给一线员工门店使用, 为了控制成本, 还有能实现离线使用, 只能选择便宜的蓝牙标签打印机, 我也即将踏上关于蓝牙模块的成长历程. 搜素设备根据官方文档的蓝牙指引开始, 我们首先初始化蓝牙 uni.openBluetoothAdapter, 然后在成功之后就可以监听蓝牙状态变化uni.onBluetoothAdapterStateChange和监听蓝牙">
+  <meta name="description" content="TSPL语言开发实例以下代码内容为一个最简单标签的必备要素，以此为例，详解设计标签时必备的内容和要点。 一个基本的标签实例 12345SIZE 60 mm,40 mmGAP 2 mmCLSTEXT 50,50,&quot;4&quot;,0,1,1,&quot;DEMO FOR TEXT&quot;PRINT 1  一张标签通常包含三个部分，即系统设定、打印内容设定和执行打印指令。  系统设定包括">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UNI-APP和小程序之蓝牙标签打印机之路">
-<meta property="og:url" content="http://qiatia.github.io/2022/06/14/UNI-APP%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E8%93%9D%E7%89%99%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%8B%E8%B7%AF/index.html">
+<meta property="og:title" content="蓝牙打印机 - TSPL协议">
+<meta property="og:url" content="http://qiatia.github.io/2022/06/14/%E8%93%9D%E7%89%99%E6%89%93%E5%8D%B0%E6%9C%BA-TSPL%E5%8D%8F%E8%AE%AE/index.html">
 <meta property="og:site_name" content="QiaTia&#96;博客">
-<meta property="og:description" content="公司最近有一个项目需求需要标签打印机打印出标签来给一线员工门店使用, 为了控制成本, 还有能实现离线使用, 只能选择便宜的蓝牙标签打印机, 我也即将踏上关于蓝牙模块的成长历程. 搜素设备根据官方文档的蓝牙指引开始, 我们首先初始化蓝牙 uni.openBluetoothAdapter, 然后在成功之后就可以监听蓝牙状态变化uni.onBluetoothAdapterStateChange和监听蓝牙">
+<meta property="og:description" content="TSPL语言开发实例以下代码内容为一个最简单标签的必备要素，以此为例，详解设计标签时必备的内容和要点。 一个基本的标签实例 12345SIZE 60 mm,40 mmGAP 2 mmCLSTEXT 50,50,&quot;4&quot;,0,1,1,&quot;DEMO FOR TEXT&quot;PRINT 1  一张标签通常包含三个部分，即系统设定、打印内容设定和执行打印指令。  系统设定包括">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-14T12:29:40.000Z">
-<meta property="article:modified_time" content="2022-10-17T11:59:03.120Z">
+<meta property="article:published_time" content="2022-06-14T12:50:12.000Z">
+<meta property="article:modified_time" content="2022-10-17T12:01:50.751Z">
 <meta property="article:author" content="QiaTia">
 <meta property="article:tag" content="微信小程序">
 <meta name="twitter:card" content="summary">
@@ -163,47 +163,240 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-UNI-APP和小程序之蓝牙标签打印机之路" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-蓝牙打印机-TSPL协议" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      UNI-APP和小程序之蓝牙标签打印机之路
+      蓝牙打印机 - TSPL协议
     </h1>
   
 
         
-        <a href="/2022/06/14/UNI-APP%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E8%93%9D%E7%89%99%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%8B%E8%B7%AF/" class="archive-article-date">
-  	<time datetime="2022-06-14T12:29:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-14</time>
+        <a href="/2022/06/14/%E8%93%9D%E7%89%99%E6%89%93%E5%8D%B0%E6%9C%BA-TSPL%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
+  	<time datetime="2022-06-14T12:50:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>公司最近有一个项目需求需要标签打印机打印出标签来给一线员工门店使用, 为了控制成本, 还有能实现离线使用, 只能选择便宜的蓝牙标签打印机, 我也即将踏上关于蓝牙模块的成长历程.</p>
-<h3 id="搜素设备"><a href="#搜素设备" class="headerlink" title="搜素设备"></a>搜素设备</h3><p>根据官方文档的蓝牙指引开始, 我们首先初始化蓝牙 <code>uni.openBluetoothAdapter</code>, 然后在成功之后就可以监听蓝牙状态变化<code>uni.onBluetoothAdapterStateChange</code>和监听蓝牙连接和断开<code>uni.onBLEConnectionStateChange</code>(这里需要注意, 这个方法在APP上可能无效, 还是要在指定时间维护状态), 再监听搜索到新设备的回调<code>uni.onBluetoothDeviceFound</code>.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">uni.openBluetoothAdapter(&#123;</span><br><span class="line">  success: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    uni.onBluetoothAdapterStateChange(<span class="function">(<span class="params">&#123; available, discovering &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      log(<span class="string">&#x27;蓝牙状态发生变化&#x27;</span>, &#123; available, discovering &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    uni.onBluetoothDeviceFound(<span class="function">(<span class="params">&#123; devices &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      log(<span class="string">&#x27;找到新设备!&#x27;</span>);</span><br><span class="line">      <span class="comment">// 在这里我们可以对搜索到的设备进行过滤</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">/** 设备链接或断开时 */</span></span><br><span class="line">    uni.onBLEConnectionStateChange(<span class="keyword">async</span> (&#123; connected &#125;) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span> (!connected) &#123;</span><br><span class="line">        log(<span class="string">&#x27;设备已断开链接!&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    uni.startBluetoothDevicesDiscovery(&#123;</span><br><span class="line">      <span class="function"><span class="title">success</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        log(<span class="string">&quot;开始搜索设备!&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err.errCode == <span class="number">10001</span>) &#123;</span><br><span class="line">      log(<span class="string">&#x27;蓝牙初始化失败, 请检查系统权限!&#x27;</span>, err);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        <h1 id="TSPL语言开发实例"><a href="#TSPL语言开发实例" class="headerlink" title="TSPL语言开发实例"></a>TSPL语言开发实例</h1><p>以下代码内容为一个最简单标签的必备要素，以此为例，详解设计标签时必备的内容和要点。</p>
+<p>一个基本的标签实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SIZE 60 mm,40 mm</span><br><span class="line">GAP 2 mm</span><br><span class="line">CLS</span><br><span class="line">TEXT 50,50,&quot;4&quot;,0,1,1,&quot;DEMO FOR TEXT&quot;</span><br><span class="line">PRINT 1</span><br></pre></td></tr></table></figure>
 
-<p>成功注册好回调函数之后, 再调用开始搜索周围设备方法<code>uni.startBluetoothDevicesDiscovery</code>开始搜索, 这里可以指定服务ID, 搜索出来的设备就可以自动过滤.</p>
-<h3 id="连接设备"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备</h3><p>搜索到指定设备之后, 就可以链接设备了, 直接调用<code>uni.createBLEConnection</code>, 通过搜索列表获取到的设备ID连接, 然后就可以获取蓝牙服务和特征值, 然后通过<code>uni.notifyBLECharacteristicValueChange</code>启用低功耗蓝牙设备特征值变化时的notify功能，订阅特征值(UniAPP存在一个问题, 连接设备之后不能立即获取服务, 会获取不到, 需要设置3秒左右的延迟). </p>
-<p>如果还不理解蓝牙协议服务和特征值可以查看 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/asam/p/8676369.html">BLE4.0教程二 蓝牙协议之服务与特征值分析</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">onConnect</span>(<span class="params">deviceId</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">success, fail</span>) =&gt;</span> &#123;</span><br><span class="line">    uni.createBLEConnection(&#123;</span><br><span class="line">      deviceId: deviceId,</span><br><span class="line">      timeout,</span><br><span class="line">      success,</span><br><span class="line">      fail,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// #ifdef APP-PLUS</span></span><br><span class="line">  <span class="keyword">await</span> sleep(<span class="number">3e3</span>);</span><br><span class="line">  <span class="comment">// #endif</span></span><br><span class="line">  <span class="keyword">const</span> &#123; services &#125; =  <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">success, fail</span>) =&gt;</span> &#123;</span><br><span class="line">    uni.getBLEDeviceServices(&#123; success, fail, deviceId &#125;)</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">const</span> &#123; characteristics &#125; = <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">success, fail</span>) =&gt;</span> &#123;</span><br><span class="line">    uni.getBLEDeviceCharacteristics(&#123; success, fail, deviceId, <span class="attr">serviceId</span>: services[<span class="number">0</span>].uuid &#125;)</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">success, fail</span>) =&gt;</span> &#123;</span><br><span class="line">    uni.notifyBLECharacteristicValueChange(&#123;</span><br><span class="line">        state: <span class="literal">true</span>,</span><br><span class="line">        deviceId,</span><br><span class="line">        serviceId: services[<span class="number">0</span>].uuid,</span><br><span class="line">        characteristicId: characteristics[<span class="number">0</span>].uuid,</span><br><span class="line">        success,</span><br><span class="line">        fail,</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一张标签通常包含三个部分，即系统设定、打印内容设定和执行打印指令。</p>
+<ul>
+<li>系统设定包括标签尺寸（SIZE、GAP）和清除缓冲区数据指令（CLS）等。</li>
+<li>打印内容设定可以参考本文档卷标内容设计指令内容，本例中系打印文本。</li>
+<li>执行打印指令用于打印出设计好的标签，在此指令发送后打印机才执行打印动作。</li>
+</ul>
+<p>需要特别注意，在每一条指令结尾需要加入换行符，即字符串“\r\n”或 16 进制 0x0D 0x0A</p>
+<h2 id="语法说明"><a href="#语法说明" class="headerlink" title="语法说明"></a>语法说明</h2><p>以下为打印标签时的常用控制指令（在飞印盒子测试页中默认会带有一段这种语法的控制指令）：</p>
+<h3 id="SIZE"><a href="#SIZE" class="headerlink" title="SIZE"></a>SIZE</h3><p>该指令用于设定卷标纸的宽度和长度。 使用公制单位，现在我们的标签大小为60mm*40mm。 注 ： 200DPI:1mm = 8dots 使用公制单位，在单位与数字之间必须添加一个空。 指令示例： SIZE 60 mm,40 mm</p>
+<h3 id="GAP"><a href="#GAP" class="headerlink" title="GAP"></a>GAP</h3><p>该指令用于定义两张卷标纸间的垂直间距距离。 可以设置2mm或者不设置 指令示例： GAP 2 mm</p>
+<h3 id="CLS"><a href="#CLS" class="headerlink" title="CLS"></a>CLS</h3><p>该指令用于清除图像缓冲区（image buffer)的数据。 注：此项指令必须置于SIZE指令之后。 指令示例： CLS</p>
+<h3 id="PRINT"><a href="#PRINT" class="headerlink" title="PRINT"></a>PRINT</h3><p>该指令用于打印出存储于影像缓冲区内的数据 可设置打印多张，需放在全部指令最后的位置。 指令示例，打印一张： PRINT 1</p>
+<h3 id="TEXT"><a href="#TEXT" class="headerlink" title="TEXT"></a>TEXT</h3><p>该指令用于打印字符串。</p>
+<p>指令语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TEXT x,y,&quot;font&quot;,rotation,x-multiplication,y-multiplication,&quot;content&quot;</span><br></pre></td></tr></table></figure>
 
-<h3 id="写入低功耗蓝牙数据"><a href="#写入低功耗蓝牙数据" class="headerlink" title="写入低功耗蓝牙数据"></a>写入低功耗蓝牙数据</h3><p>写入二进制数据要注意蓝牙最大传输单元, IOS默认支持160字节, 安卓默认20字节, 虽然安卓可以通过<code>uni.setBLEMTU</code>设置最大传输单元, 但是部分设备可能会设置失败, 并且安卓安卓还会返回设置成功, 直接写入超标长度的数据会直接让设备卡死. 所以最好还是直接拆分数据分片写入 :</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">writeData</span>(<span class="params">cmd: <span class="built_in">Uint8Array</span>, mtu: number, deviceId: string, serviceId: string, characteristicId: string</span>) </span>&#123;</span><br><span class="line">  <span class="comment">/** 对指令进行分组 */</span></span><br><span class="line">  <span class="keyword">const</span> list = (<span class="function"><span class="keyword">function</span> (<span class="params">e, t</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> len = e.length,</span><br><span class="line">      list = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i += t) list.push(e.slice(i, i + t));</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">  &#125;)(cmd, mtu);</span><br><span class="line">  <span class="keyword">const</span> writeBLECharacteristicValue = (</span><br><span class="line">    data: <span class="built_in">Uint8Array</span>,</span><br><span class="line">  ): <span class="built_in">Promise</span>&lt;UniApp.StopBluetoothDevicesDiscoverySuccess&gt; =&gt;</span><br><span class="line">    <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">success, fail</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> value = <span class="built_in">Uint8Array</span>.from(data);</span><br><span class="line">      uni.writeBLECharacteristicValue(&#123;</span><br><span class="line">        deviceId,</span><br><span class="line">        serviceId,</span><br><span class="line">        characteristicId,</span><br><span class="line">        value: value.buffer,</span><br><span class="line">        success,</span><br><span class="line">        fail,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> list) &#123;</span><br><span class="line">      <span class="keyword">await</span> sleep();</span><br><span class="line">      <span class="keyword">await</span> writeBLECharacteristicValue(item);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    log(<span class="string">&#x27;数据写入失败!&#x27;</span>, e);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(e);</span><br><span class="line">  &#125;</span><br><span class="line">  log(<span class="string">&#x27;数据写入完成!&#x27;</span>, list);</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">sucess</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以下是详细参数说明：</p>
+<p>参数    说明</p>
+<hr>
+<p>x    文字 X 方向起始点坐标<br>y    文字 Y 方向起始点坐标</p>
+<hr>
+<p>font    字体名称<br>1    8×12 dot 英数字体<br>2    12×20 dot 英数字体<br>3    16×24 dot 英数字体<br>4    24×32 dot 英数字体<br>5    32×48 dot 英数字体<br>6    14×19 dot 英数字体 OCR-B<br>7    21×27 dot 英数字体 OCR-B<br>8    14×25 dot 英数字体 OCR-A<br>9    9×17 dot 英数字体<br>10    12×24 dot 英数字体<br>TST24.BF2    繁体中文 24×24Font(大五码）<br>TSS24.BF2    简体中文 24×24Font（GB 码）<br>K    韩文 24×24Font（KS 码）</p>
+<hr>
+<p>rotation    文字旋转角度（顺时针方向）<br>0    0 度<br>90    90 度<br>180    180 度<br>270    270 度</p>
+<hr>
+<p>x-multiplication    X 方向放大倍率 1-10<br>y-multiplication    Y 方向放大倍率 1-10</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">注意：五号字英文字母仅可打印大写字母</span><br><span class="line"></span><br><span class="line">若要打印双引号时(“)在程序中请使用 [”] 来打印双引号</span><br><span class="line"></span><br><span class="line">若要打印0D(hex)字符时，请在程序中使用[R]来打印CR</span><br><span class="line"></span><br><span class="line">若要打印0A(hex)字符时，请在程序中使用[A]来打印LF</span><br></pre></td></tr></table></figure>
 
-<h3 id="TSPL协议适配"><a href="#TSPL协议适配" class="headerlink" title="TSPL协议适配"></a>TSPL协议适配</h3><p>我手上目前的设备都是使用TSPL协议的设备, 他们差异也就再部分设备需要反正发送数据, 也就是内容需要颠倒180°,  需要把我发送的指令从后打印出来. 还有部分数据对文字颠倒的渲染也不一样. </p>
-<p>由于我们打印的内容是动态不固定, 可能出现换行这些情况, 打印指令也就需要计算文字宽度, 也就判断下中文占满一个文字宽度, 英文只有一半</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStrLen</span>(<span class="params">str: string</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> size = <span class="number">0</span>;</span><br><span class="line">  str.split(<span class="string">&#x27;&#x27;</span>).forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> (size += <span class="regexp">/^[\u4e00-\u9fa5]/</span>.test(item) ? <span class="number">2</span> : <span class="number">1</span>));</span><br><span class="line">  <span class="keyword">return</span> size / <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用说明："><a href="#使用说明：" class="headerlink" title="使用说明："></a>使用说明：</h4><p>一倍倍率下，60mm宽的标签，可以打印19个全角中文字符或者39个半角字母数字，中文字体高度为24dtos。</p>
+<p>TSPL打印时没有居中指令，需要手动设置</p>
+<p>打印不会自动换行，超出宽度的文字将无法正常打印，所以多行文本，需要用到多个TEXT指令，每一打印文本的起始打印位置都需要手动设置，单位为dtos，即点阵数。60mm<em>40mm的点阵比为480</em>320。</p>
+<p>常见的文字打印指令示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TEXT 0,10,&quot;TSS24.BF2&quot;,0,1,1,&quot;一二三四五六七八九十二二三四五六七八九十&quot;</span><br><span class="line">TEXT 0,30,&quot;TSS24.BF2&quot;,0,1,1,&quot;12345678902234567890323456789042345678905234567890&quot;</span><br></pre></td></tr></table></figure>
 
-<p>通过计算这一行是否超出纸宽, 来判断是否换行, 还有根据文字大写来确定下一行的Y轴坐标. 动态拼接文本指令就可以了 <code>TEXT x,y,&quot;font&quot;,rotation,x-multiplication,y-multiplication,&quot;content&quot;</code></p>
-<p>然后把整个指令内容转为GBK的二进制数据, 分片发送给设备就可以打印了</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toGBKBytes</span>(<span class="params">e: string</span>) </span>&#123;</span><br><span class="line">  e = encode(e);</span><br><span class="line">  <span class="keyword">const</span> t = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> r = <span class="number">0</span>; r &lt; e.length; r++) &#123;</span><br><span class="line">    <span class="keyword">const</span> a = e.charAt(r);</span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&#x27;%&#x27;</span> == a) &#123;</span><br><span class="line">      <span class="keyword">const</span> start = e.charAt(r + <span class="number">1</span>) + e.charAt(r + <span class="number">2</span>);</span><br><span class="line">      <span class="keyword">let</span> i = <span class="built_in">parseInt</span>(start, <span class="number">16</span>);</span><br><span class="line">      (i |= -<span class="number">256</span>), t.push(i), (r += <span class="number">2</span>);</span><br><span class="line">      <span class="comment">// @ts-ignore</span></span><br><span class="line">    &#125; <span class="keyword">else</span> t.push(a.charCodeAt());</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Uint8Array</span>.from(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br/>
 
-<h3 id="打印指令一览"><a href="#打印指令一览" class="headerlink" title="打印指令一览"></a>打印指令一览</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DIRECTION 1</span><br><span class="line">CLS</span><br><span class="line">TEXT 106,72,<span class="string">&quot;TSS24.BF2&quot;</span>,0,1.17,1.17,<span class="string">&quot;查看区域效期|标准&quot;</span></span><br><span class="line">TEXT 106,112,<span class="string">&quot;TSS24.BF2&quot;</span>,0,0.92,0.92,<span class="string">&quot;使用范围：标准&quot;</span></span><br><span class="line">TEXT 106,143,<span class="string">&quot;TSS24.BF2&quot;</span>,0,0.92,0.92,<span class="string">&quot;开始时间：2022-09-28 10:00&quot;</span></span><br><span class="line">TEXT 106,174,<span class="string">&quot;TSS24.BF2&quot;</span>,0,0.92,0.92,<span class="string">&quot;结束时间：2022-09-29 23:59&quot;</span></span><br><span class="line">TEXT 106,205,<span class="string">&quot;TSS24.BF2&quot;</span>,0,0.92,0.92,<span class="string">&quot;储存条件：隔热水加盖&quot;</span></span><br><span class="line">TEXT 106,236,<span class="string">&quot;TSS24.BF2&quot;</span>,0,0.92,0.92,<span class="string">&quot;操作人：ItTest&quot;</span></span><br><span class="line">PRINT 1</span><br></pre></td></tr></table></figure>
+<h3 id="BAR"><a href="#BAR" class="headerlink" title="BAR"></a>BAR</h3><p>该指令用于在标签上画线。</p>
+<p>指令语法：</p>
+<p><code>BAR x,y,width,height</code></p>
+<p>以下是详细参数说明：</p>
+<p>参数    说明</p>
+<hr>
+<p>x    线条左上角 X 坐标，单位 dot<br>y    线条左上角 Y 坐标，单位 dot</p>
+<hr>
+<p>width    线宽，单位 dot<br>height    线高，单位 dot</p>
+<hr>
+<p>指令示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BAR 100,100,300,200</span><br></pre></td></tr></table></figure>
+
+<h3 id="BARCODE"><a href="#BARCODE" class="headerlink" title="BARCODE"></a>BARCODE</h3><p>该指令用来画一维条码</p>
+<p>指令语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BARCODE x,y,&quot;code type&quot;,height,human readable,rotation,narrow,wide,&quot;content&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以下是详细参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x</td>
+<td>左上角水平坐标起点，以点（dot）表示</td>
+</tr>
+<tr>
+<td>y</td>
+<td>左上角垂直坐标起点，以点（dot）表示</td>
+</tr>
+<tr>
+<td>code type</td>
+<td>建议使用39或128</td>
+</tr>
+<tr>
+<td>height</td>
+<td>条形码高度，以点（dot）表示</td>
+</tr>
+<tr>
+<td>Human readable</td>
+<td>0 表示人眼不可识，1 表示人眼可识，即在条码下显示内容</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>条形码旋转角度，顺时针方向</td>
+</tr>
+<tr>
+<td></td>
+<td>0    不旋转 90    顺时针方向旋转 90 度 180    顺时针方向旋转 180 度 270    顺时针方向旋转 270 度</td>
+</tr>
+<tr>
+<td>narrow</td>
+<td>窄 bar 宽度，以点（dot）表示</td>
+</tr>
+<tr>
+<td>wide</td>
+<td>宽 bar 宽度，以点（dot）表示</td>
+</tr>
+<tr>
+<td>content</td>
+<td>一维码内容</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注：条码肉眼可见时，需要预留条码内容的显示位置，内容高度24dot</span><br></pre></td></tr></table></figure>
+
+<p>指令示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BARCODE 100,100,&quot;128&quot;,50,0,0,2,4,&quot;4600408762105840&quot;</span><br><span class="line">QRCODE</span><br></pre></td></tr></table></figure>
+
+<p>该指令用来打印二维码</p>
+<p>程序语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QRCODE x,y,ECC level,cellwidth,mode,rotation,&quot;data string&quot;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>_____________</td>
+<td>_____________________________________________</td>
+</tr>
+<tr>
+<td>ｘ</td>
+<td>二维码水平方向起始点坐标</td>
+</tr>
+<tr>
+<td>ｙ</td>
+<td>二维码垂直方向起始点坐标</td>
+</tr>
+<tr>
+<td>_____________</td>
+<td>_____________________________________________</td>
+</tr>
+<tr>
+<td>ECC level</td>
+<td>选择 QRCODE 纠错等级</td>
+</tr>
+<tr>
+<td>L</td>
+<td>7%</td>
+</tr>
+<tr>
+<td>M</td>
+<td>15%</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>H</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>_____________</td>
+<td>_____________________________________________</td>
+</tr>
+<tr>
+<td>cell width</td>
+<td>二维码宽度 1-10</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>手动/自动编码</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Auto</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td>_____________</td>
+<td>_____________________________________________</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>旋转角度（顺时针方向）</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0 度</td>
+</tr>
+<tr>
+<td>90</td>
+<td>90 度</td>
+</tr>
+<tr>
+<td>180</td>
+<td>180 度</td>
+</tr>
+<tr>
+<td>270</td>
+<td>270 度</td>
+</tr>
+<tr>
+<td>data string</td>
+<td>编码的字符串</td>
+</tr>
+<tr>
+<td>_____________</td>
+<td>_____________________________________________</td>
+</tr>
+</tbody></table>
+<p>指令示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QRCODE 50,50,M,6,A,0,&quot;www.feyin.cn&quot;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -273,7 +466,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://qiatia.github.io/2022/06/14/UNI-APP%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E8%93%9D%E7%89%99%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%8B%E8%B7%AF/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qiatia.github.io/2022/06/14/%E8%93%9D%E7%89%99%E6%89%93%E5%8D%B0%E6%9C%BA-TSPL%E5%8D%8F%E8%AE%AE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -287,18 +480,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/06/14/%E8%93%9D%E7%89%99%E6%89%93%E5%8D%B0%E6%9C%BA-TSPL%E5%8D%8F%E8%AE%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          蓝牙打印机 - TSPL协议
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/03/21/%E5%B0%81%E8%A3%85%E5%AE%9E%E7%8E%B0refToken%E5%AF%B9%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">封装实现refToken对象</div>
+    <a href="/2022/06/14/UNI-APP%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E8%93%9D%E7%89%99%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%8B%E8%B7%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">UNI-APP和小程序之蓝牙标签打印机之路</div>
       <i class="icon-circle-right"></i>
     </a>
   
