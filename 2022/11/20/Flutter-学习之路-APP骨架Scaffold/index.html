@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qiatia.github.io">
-  <title>Archives | QiaTia`博客</title>
+  <title>Flutter 学习之路 - APP骨架Scaffold | QiaTia`博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QiaTia&#96;博客">
-<meta property="og:url" content="http://qiatia.github.io/archives/page/4/index.html">
+  <meta name="description" content="利用Material 提供Scaffold组件可以很方便的搭建出页面的骨架.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter 学习之路 - APP骨架Scaffold">
+<meta property="og:url" content="http://qiatia.github.io/2022/11/20/Flutter-%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-APP%E9%AA%A8%E6%9E%B6Scaffold/index.html">
 <meta property="og:site_name" content="QiaTia&#96;博客">
-<meta property="og:description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
+<meta property="og:description" content="利用Material 提供Scaffold组件可以很方便的搭建出页面的骨架.">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-20T09:45:55.000Z">
+<meta property="article:modified_time" content="2022-11-21T02:47:44.736Z">
 <meta property="article:author" content="QiaTia">
-<meta property="article:tag" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
+<meta property="article:tag" content="flutter">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="QiaTia`博客" type="application/atom+xml">
@@ -161,453 +163,469 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Flutter-学习之路-APP骨架Scaffold" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Flutter 学习之路 - APP骨架Scaffold
+    </h1>
+  
+
+        
+        <a href="/2022/11/20/Flutter-%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-APP%E9%AA%A8%E6%9E%B6Scaffold/" class="archive-article-date">
+  	<time datetime="2022-11-20T09:45:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>利用Material 提供<code>Scaffold</code>组件可以很方便的搭建出页面的骨架.</p>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>appBar</td>
+<td>页面上方导航条</td>
+</tr>
+<tr>
+<td>body</td>
+<td>页面容器</td>
+</tr>
+<tr>
+<td>floatingActionButton</td>
+<td>悬浮按钮</td>
+</tr>
+<tr>
+<td>floatingActionButtonLocation</td>
+<td>悬浮按钮位置</td>
+</tr>
+<tr>
+<td>floatingActionButtonAnimator</td>
+<td>悬浮按钮动画</td>
+</tr>
+<tr>
+<td>persistentFooterButtons</td>
+<td>显示在底部导航条上方的一组按钮</td>
+</tr>
+<tr>
+<td>drawer</td>
+<td>左侧菜单</td>
+</tr>
+<tr>
+<td>endDrawer</td>
+<td>右侧菜单</td>
+</tr>
+<tr>
+<td>bottomNavigationBar</td>
+<td>底部导航条</td>
+</tr>
+<tr>
+<td>bottomSheet</td>
+<td>一个持久停留在body下方，底部控件上方的控件</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>背景色</td>
+</tr>
+<tr>
+<td>resizeToAvoidBottomPadding</td>
+<td>已废弃，resizeToAvoidBottomInset作为替代</td>
+</tr>
+<tr>
+<td>resizeToAvoidBottomInset</td>
+<td>默认为 true，防止一些小组件重复</td>
+</tr>
+<tr>
+<td>primary</td>
+<td>是否在屏幕顶部显示Appbar, 默认为 true，Appbar 是否向上延伸到状态栏，如电池电量，时间那一栏</td>
+</tr>
+<tr>
+<td>drawerDragStartBehavior</td>
+<td>控制 drawer 的一些特性</td>
+</tr>
+<tr>
+<td>extendBody</td>
+<td>body 是否延伸到底部控件</td>
+</tr>
+<tr>
+<td>extendBodyBehindAppBar</td>
+<td>默认 false，为 true 时，body 会置顶到 appbar 后，如appbar 为半透明色，可以有毛玻璃效果</td>
+</tr>
+<tr>
+<td>drawerScrimColor</td>
+<td>侧滑栏拉出来时，用来遮盖主页面的颜色</td>
+</tr>
+<tr>
+<td>drawerEdgeDragWidth</td>
+<td>侧滑栏拉出来的宽度</td>
+</tr>
+<tr>
+<td>drawerEnableOpenDragGesture</td>
+<td>左侧侧滑栏是否可以滑动</td>
+</tr>
+<tr>
+<td>endDrawerEnableOpenDragGesture</td>
+<td>右侧侧滑栏是否可</td>
+</tr>
+</tbody></table>
+<h2 id="顶部导航栏"><a href="#顶部导航栏" class="headerlink" title="顶部导航栏"></a>顶部导航栏</h2><p><code>AppBar</code>是一个Material风格的导航栏，通过它可以设置导航栏标题、导航栏菜单、导航栏底部的Tab标题等。下面我们看看AppBar的定义：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>leading</td>
+<td>导航栏最左侧Widget，常见为抽屉菜单按钮或返回按钮。</td>
+</tr>
+<tr>
+<td>automaticallyImplyLeading</td>
+<td>如果leading为null，是否自动实现默认的leading按钮</td>
+</tr>
+<tr>
+<td>title</td>
+<td>页面标题</td>
+</tr>
+<tr>
+<td>actions</td>
+<td>导航栏右侧菜单</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>导航栏底部菜单，通常为Tab按钮组</td>
+</tr>
+<tr>
+<td>elevation</td>
+<td>导航栏阴影</td>
+</tr>
+<tr>
+<td>centerTitle</td>
+<td>标题是否居中</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>如果给<code>Scaffold</code>添加了抽屉菜单，默认情况下<code>Scaffold</code>会自动将AppBar的leading设置为菜单按钮，点击它便可打开抽屉菜单。如果我们想自定义菜单图标，可以手动来设置leading，如：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> GlobalKey&lt;ScaffoldState&gt; _key = GlobalKey();</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">Scaffold(</span><br><span class="line">  key: _key,</span><br><span class="line">  appBar: AppBar(</span><br><span class="line">    title: Text(<span class="string">&quot;App Name&quot;</span>),</span><br><span class="line">    leading: Builder(builder: (context) &#123;</span><br><span class="line">      <span class="keyword">return</span> IconButton(</span><br><span class="line">        icon: Icon(Icons.dashboard), <span class="comment">//自定义图标</span></span><br><span class="line">        onPressed: () &#123;</span><br><span class="line">          <span class="comment">// 打开抽屉菜单  </span></span><br><span class="line">          _key.currentState!.openDrawer();</span><br><span class="line">        &#125;,</span><br><span class="line">      );</span><br><span class="line">    &#125;),</span><br><span class="line">    ...  </span><br><span class="line">  )  </span><br></pre></td></tr></table></figure>
+
+<h3 id="抽屉菜单"><a href="#抽屉菜单" class="headerlink" title="抽屉菜单"></a>抽屉菜单</h3><p><code>Scaffold</code>的<code>drawer</code>和<code>endDrawer</code>属性可以分别接受一个Widget来作为页面的左、右抽屉菜单。如果开发者提供了抽屉菜单，那么当用户手指从屏幕左（或右）侧向里滑动时便可打开抽屉菜单。本节开始部分的示例中实现了一个左抽屉菜单MyDrawer，它的源码如下：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyDrawer</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> MyDrawer(&#123;</span><br><span class="line">    Key? key,</span><br><span class="line">  &#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Drawer(</span><br><span class="line">      child: MediaQuery.removePadding(</span><br><span class="line">        context: context,</span><br><span class="line">        <span class="comment">//移除抽屉菜单顶部默认留白</span></span><br><span class="line">        removeTop: <span class="keyword">true</span>,</span><br><span class="line">        child: Column(</span><br><span class="line">          crossAxisAlignment: CrossAxisAlignment.start,</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            Padding(</span><br><span class="line">              padding: <span class="keyword">const</span> EdgeInsets.only(top: <span class="number">38.0</span>),</span><br><span class="line">              child: Row(</span><br><span class="line">                children: &lt;Widget&gt;[</span><br><span class="line">                  Padding(</span><br><span class="line">                    padding: <span class="keyword">const</span> EdgeInsets.symmetric(horizontal: <span class="number">16.0</span>),</span><br><span class="line">                    child: ClipOval(</span><br><span class="line">                      child: Image.asset(</span><br><span class="line">                        <span class="string">&quot;imgs/avatar.png&quot;</span>,</span><br><span class="line">                        width: <span class="number">80</span>,</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                  Text(</span><br><span class="line">                    <span class="string">&quot;Wendux&quot;</span>,</span><br><span class="line">                    style: TextStyle(fontWeight: FontWeight.bold),</span><br><span class="line">                  )</span><br><span class="line">                ],</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            Expanded(</span><br><span class="line">              child: ListView(</span><br><span class="line">                children: <span class="keyword">const</span> &lt;Widget&gt;[</span><br><span class="line">                  ListTile(</span><br><span class="line">                    leading: Icon(Icons.add),</span><br><span class="line">                    title: Text(<span class="string">&#x27;Add account&#x27;</span>),</span><br><span class="line">                  ),</span><br><span class="line">                  ListTile(</span><br><span class="line">                    leading: Icon(Icons.settings),</span><br><span class="line">                    title: Text(<span class="string">&#x27;Manage accounts&#x27;</span>),</span><br><span class="line">                  ),</span><br><span class="line">                ],</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="FloatingActionButton"><a href="#FloatingActionButton" class="headerlink" title="FloatingActionButton"></a>FloatingActionButton</h3><p><code>FloatingActionButton</code>是Material设计规范中的一种特殊Button，通常悬浮在页面的某一个位置作为某种常用动作的快捷入口。我们可以通过<code>Scaffold</code>的<code>floatingActionButton</code>属性来设置一个<code>FloatingActionButton</code>，同时通过<code>floatingActionButtonLocation</code>属性来指定其在页面中悬浮的位置，这个比较简单，不再赘述。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">return</span> Scaffold(</span><br><span class="line">  floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,</span><br><span class="line">  floatingActionButton: FloatingActionButton(</span><br><span class="line">    onPressed: () &#123;&#125;,</span><br><span class="line">    tooltip: <span class="string">&#x27;Increment&#x27;</span>,</span><br><span class="line">    focusColor: Colors.yellow,</span><br><span class="line">    child: <span class="keyword">const</span> Icon(Icons.add),</span><br><span class="line">  ), <span class="comment">// This trailing comma makes auto-formatting nicer for build methods.</span></span><br><span class="line">);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="底部Tab导航栏"><a href="#底部Tab导航栏" class="headerlink" title="底部Tab导航栏"></a>底部Tab导航栏</h3><p>我们可以通过<code>Scaffold</code>的<code>bottomNavigationBar</code>属性来设置底部导航，如本节开始示例所示，我们通过Material组件库提供的<code>BottomNavigationBar</code>和<code>BottomNavigationBarItem</code>两种组件来实现Material风格的底部导航栏。</p>
+<p><code>Material</code>组件库中提供了一个<code>BottomAppBar</code> 组件，它可以和<code>FloatingActionButton</code>配合实现“打洞”效果：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">bottomNavigationBar: BottomAppBar(</span><br><span class="line">  color: Colors.white,</span><br><span class="line">  shape: CircularNotchedRectangle(), <span class="comment">// 底部导航栏打一个圆形的洞</span></span><br><span class="line">  child: Row(</span><br><span class="line">    children: [</span><br><span class="line">      IconButton(icon: Icon(Icons.home)),</span><br><span class="line">      SizedBox(), <span class="comment">//中间位置空出</span></span><br><span class="line">      IconButton(icon: Icon(Icons.business)),</span><br><span class="line">    ],</span><br><span class="line">    mainAxisAlignment: MainAxisAlignment.spaceAround, <span class="comment">//均分底部导航栏横向空间</span></span><br><span class="line">  ),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><code>BottomAppBar</code>的shape属性决定洞的外形，CircularNotchedRectangle实现了一个圆形的外形，我们也可以自定义外形</p>
+<h3 id="页面-body"><a href="#页面-body" class="headerlink" title="页面 body"></a>页面 body</h3><p>Scaffold 有一个 body 属性，接收一个 Widget，我们可以传任意的 Widget 。</p>
+<p><code>TabBarView</code>是一个可以进行页面切换的组件，在多 Tab 的 App 中，一般都会将 <code>TabBarView</code> 作为 Scaffold 的 Body。</p>
+<h3 id="TabBar-amp-TabBarView"><a href="#TabBar-amp-TabBarView" class="headerlink" title="TabBar &amp; TabBarView"></a>TabBar &amp; TabBarView</h3><p><code>TabBarView</code> 是 Material 组件库中提供了 Tab 布局组件，通常和 <code>TabBar</code> 配合使用。</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>children</td>
+<td></td>
+</tr>
+<tr>
+<td>controller</td>
+<td></td>
+</tr>
+<tr>
+<td>physics</td>
+<td>属性同下TabBar</td>
+</tr>
+<tr>
+<td>dragStartBehavior</td>
+<td>属性同下TabBar</td>
+</tr>
+</tbody></table>
+<p><code>TabBar</code>属性列表</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tabs</td>
+<td>List<Tab></td>
+<td>两个多个的Tab列表</td>
+</tr>
+<tr>
+<td>controller</td>
+<td>TabController</td>
+<td>控制tab的控制器</td>
+</tr>
+<tr>
+<td>isScrollable</td>
+<td>bool</td>
+<td>标签栏是否可以水平滚动</td>
+</tr>
+<tr>
+<td>indicatorColor</td>
+<td>Color</td>
+<td>设置选中Tab指示器的颜色</td>
+</tr>
+<tr>
+<td>automaticIndicatorColor</td>
+<td>Adjustmentbool</td>
+<td>是否自动调整indicatorColor</td>
+</tr>
+<tr>
+<td>indicatorWeight</td>
+<td>double</td>
+<td>设置选中Tab指示器线条的粗细</td>
+</tr>
+<tr>
+<td>indicatorPadding</td>
+<td>EdgeInsetsGeometry</td>
+<td>设置选中Tab指示器间距，默认值为 EdgeInsets.zero</td>
+</tr>
+<tr>
+<td>indicator</td>
+<td>Decoration</td>
+<td>设置选中Tab指示器的外观</td>
+</tr>
+<tr>
+<td>indicatorSize</td>
+<td>TabBarIndicatorSize</td>
+<td>设置选中Tab指示器的大小</td>
+</tr>
+<tr>
+<td>labelColor</td>
+<td>Color</td>
+<td>设置选中Tab文字的颜色</td>
+</tr>
+<tr>
+<td>labelStyle</td>
+<td>TextStyle</td>
+<td>设置选中Tab文字的样式</td>
+</tr>
+<tr>
+<td>labelPadding</td>
+<td>EdgeInsetsGeometry</td>
+<td>设置选中Tab文字的间距</td>
+</tr>
+<tr>
+<td>unselectedLabelColor</td>
+<td>Color</td>
+<td>设置未选中Tab文字的颜色</td>
+</tr>
+<tr>
+<td>unselectedLabelStyle</td>
+<td>TextStyle</td>
+<td>设置未选中Tab文字的样式</td>
+</tr>
+<tr>
+<td>dragStartBehavior</td>
+<td>DragStartBehavior</td>
+<td>处理拖动开始行为的方式</td>
+</tr>
+<tr>
+<td>overlayColor</td>
+<td>MaterialStateProperty</td>
+<td>定义响应焦点、悬停和飞溅颜色</td>
+</tr>
+<tr>
+<td>mouseCursor</td>
+<td>MouseCursor</td>
+<td>鼠标指针进入或悬停在鼠标指针上时的光标</td>
+</tr>
+<tr>
+<td>enableFeedback</td>
+<td>bool</td>
+<td>检测到的手势是否应提供声音和/或触觉反馈</td>
+</tr>
+<tr>
+<td>onTap</td>
+<td>ValueChanged</td>
+<td>单击Tab时的回调</td>
+</tr>
+<tr>
+<td>physics</td>
+<td>ScrollPhysicsTabBar</td>
+<td>的滚动视图如何响应用户输入</td>
+</tr>
+</tbody></table>
+<p><code>TabController</code> 用于监听和控制 <code>TabBarView</code> 的页面切换，通常和 <code>TabBar</code> 联动。如果没有指定，则会在组件树中向上查找并使用最近的一个 <code>DefaultTabController</code></p>
+<p><code>Tab</code>属性列表</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>text</td>
+<td>String</td>
+<td>文本</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>Icon</td>
+<td>图标</td>
+</tr>
+<tr>
+<td>iconMargin</td>
+<td>EdgeInsets</td>
+<td>图标编剧</td>
+</tr>
+<tr>
+<td>height</td>
+<td></td>
+<td>高度</td>
+</tr>
+<tr>
+<td>child</td>
+<td>widget</td>
+<td>自定义 widget</td>
+</tr>
+</tbody></table>
+<p>注意，<code>text</code> 和 <code>child</code> 是互斥的，不能同时制定。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">List</span> tabs = [<span class="string">&quot;新闻&quot;</span>, <span class="string">&quot;历史&quot;</span>, <span class="string">&quot;图片&quot;</span>];</span><br><span class="line">...</span><br><span class="line"><span class="keyword">return</span> DefaultTabController(</span><br><span class="line">    length: tabs.length,</span><br><span class="line">    child: Scaffold(</span><br><span class="line">    appBar: AppBar(</span><br><span class="line">      title: Text(<span class="string">&quot;App Name&quot;</span>),</span><br><span class="line">      bottom: TabBar(</span><br><span class="line">        tabs: tabs.map((e) =&gt; Tab(text: e)).toList(),</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">    body: TabBarView( <span class="comment">//构建</span></span><br><span class="line">      children: tabs.map((e) =&gt; Container(</span><br><span class="line">            alignment: Alignment.center,</span><br><span class="line">            child: Text(e, textScaleFactor: <span class="number">5</span>)</span><br><span class="line">        )</span><br><span class="line">      ).toList(),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/26/%E5%B0%81%E8%A3%85%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEjs%E5%88%B0%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fapi/" class="archive-article-date">
-  	<time datetime="2019-11-26T09:37:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/26/%E5%B0%81%E8%A3%85%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEjs%E5%88%B0%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Fapi/">封装高德地图js到微信小程序api</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qiatia.github.io/2022/11/20/Flutter-%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-APP%E9%AA%A8%E6%9E%B6Scaffold/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/25/%E5%AF%B9%E6%8E%A5%E7%BD%91%E6%98%93nos%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E5%88%86%E7%89%87%E7%9B%B4%E4%BC%A0/" class="archive-article-date">
-  	<time datetime="2019-10-25T11:17:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/11/06/Flutter/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初识 Flutter</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/25/%E5%AF%B9%E6%8E%A5%E7%BD%91%E6%98%93nos%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E5%88%86%E7%89%87%E7%9B%B4%E4%BC%A0/">对接网易nos实现文件分片直传</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/15/nodejs%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%9C%8D%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2019-10-15T06:20:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/15/nodejs%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%9C%8D%E5%8A%A1/">nodejs搭建简单的微信公众号服务</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">NodeJS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信公众号</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Koa2</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/10/%E5%A4%8D%E6%9D%82%E8%81%94%E5%8A%A8%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9/" class="archive-article-date">
-  	<time datetime="2019-08-10T01:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/10/%E5%A4%8D%E6%9D%82%E8%81%94%E5%8A%A8%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9/">mint_picker - 复杂联动日期选择</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/13/%E5%8A%A8%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AAPromise/" class="archive-article-date">
-  	<time datetime="2019-07-13T01:04:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/13/%E5%8A%A8%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AAPromise/">动手写一个Promise</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/04/%E6%BB%9A%E5%8A%A8%E6%95%B0%E5%AD%97/" class="archive-article-date">
-  	<time datetime="2019-07-04T04:17:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/04/%E6%BB%9A%E5%8A%A8%E6%95%B0%E5%AD%97/">滚动的数字栏</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/26/vue-comp-auto-input/" class="archive-article-date">
-  	<time datetime="2019-06-26T07:12:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/26/vue-comp-auto-input/">Vue组件-AutoInput(自动完成输入)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/03/token-mini-app/" class="archive-article-date">
-  	<time datetime="2019-06-03T01:32:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/03/token-mini-app/">拦截token验证与ref Token (微信小程序)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/30/token-axios/" class="archive-article-date">
-  	<time datetime="2019-05-30T04:28:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/30/token-axios/">拦截token验证与ref Token (Vue, Axios)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/30/async-await/" class="archive-article-date">
-  	<time datetime="2019-05-30T04:28:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/30/async-await/">async 与 await</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/5/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -631,8 +649,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
