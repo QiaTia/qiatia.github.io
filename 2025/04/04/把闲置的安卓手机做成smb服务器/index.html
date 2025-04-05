@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qiatia.github.io">
-  <title>QiaTia`博客</title>
+  <title>把闲置的安卓手机做成smb服务器 | QiaTia`博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QiaTia&#96;博客">
-<meta property="og:url" content="http://qiatia.github.io/index.html">
+  <meta name="description" content="最近买了一个MacBook Air，奈何囊中羞涩只买得起256G的版本，到手之后把开发环境搭建好已经没有啥剩余空间，看了下上次换下来的安卓手机，8 + 256的配置，这200多G的空间已经快赶上我电脑了，这不利用起来真的是天理难容啊。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把闲置的安卓手机做成smb服务器">
+<meta property="og:url" content="http://qiatia.github.io/2025/04/04/%E6%8A%8A%E9%97%B2%E7%BD%AE%E7%9A%84%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%81%9A%E6%88%90smb%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="QiaTia&#96;博客">
-<meta property="og:description" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
+<meta property="og:description" content="最近买了一个MacBook Air，奈何囊中羞涩只买得起256G的版本，到手之后把开发环境搭建好已经没有啥剩余空间，看了下上次换下来的安卓手机，8 + 256的配置，这200多G的空间已经快赶上我电脑了，这不利用起来真的是天理难容啊。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tia.nos-eastchina1.126.net/blog/2025-04-05/1743842825358.png">
+<meta property="article:published_time" content="2025-04-04T07:54:18.000Z">
+<meta property="article:modified_time" content="2025-04-05T12:12:40.077Z">
 <meta property="article:author" content="QiaTia">
-<meta property="article:tag" content="QiaTia,技术网站,QiaTia&#96;小窝,web博客,ACG交流,前端博客,php技术,资源共享">
+<meta property="article:tag" content="杂谈">
+<meta property="article:tag" content="折腾记录">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tia.nos-eastchina1.126.net/blog/2025-04-05/1743842825358.png">
   
     <link rel="alternative" href="/atom.xml" title="QiaTia`博客" type="application/atom+xml">
   
@@ -161,16 +166,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-把闲置的安卓手机做成smb服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-把闲置的安卓手机做成smb服务器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/04/04/%E6%8A%8A%E9%97%B2%E7%BD%AE%E7%9A%84%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%81%9A%E6%88%90smb%E6%9C%8D%E5%8A%A1%E5%99%A8/">把闲置的安卓手机做成smb服务器</a>
+    <h1 class="article-title" itemprop="name">
+      把闲置的安卓手机做成smb服务器
     </h1>
   
 
@@ -184,9 +187,61 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近买了一个MacBook Air，奈何囊中羞涩只买得起256G的版本，到手之后把开发环境搭建好已经没有啥剩余空间，看了下上次换下来的安卓手机，8 + 256的配置，这200多G的空间已经快赶上我电脑了，这不利用起来真的是天理难容啊。</p>
-        
-          <a class="article-more-a" href="/2025/04/04/%E6%8A%8A%E9%97%B2%E7%BD%AE%E7%9A%84%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%81%9A%E6%88%90smb%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">more >></a>
-        
+<span id="more"></span>
+<h3 id="安卓软件方案"><a href="#安卓软件方案" class="headerlink" title="安卓软件方案"></a>安卓软件方案</h3><p>最开始是打算找一下支持远程访问的安卓软件的，比如小米的ftp服务，ftp服务搭建好了直接挂在到macOS上，打开视频会全量下载完成之后才会播放，用来传输文件还好，但是做存储体验太差了。</p>
+<p>去然后找了一堆软件，比如 <code>Mix文件管理器</code> 、<code>SMB Server</code> 开启的ftp服务倒是没啥问题，开启smb服务就根本连接不上，还有<code>lan drive</code>这些比较老的软件根本运行不起来咯。</p>
+<h3 id="termux-服务方案（依赖-root）"><a href="#termux-服务方案（依赖-root）" class="headerlink" title="termux 服务方案（依赖 root）"></a>termux 服务方案（依赖 root）</h3><p>安卓设备本来就是一个运行在Linux上的系统，Linux可玩的那可就多了，以前玩过Termux跑一些机器人服务，先直接按照Linux的方案把<code>samba</code>服务跑起来就行。</p>
+<p>GitHub上直接下载最新发行版安装好 <a target="_blank" rel="noopener" href="https://github.com/termux/termux-app/releases">https://github.com/termux/termux-app/releases</a></p>
+<h4 id="Termux-配置"><a href="#Termux-配置" class="headerlink" title="Termux 配置"></a>Termux 配置</h4><p>打开termux软件，切换源到国内</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-change-repo</span><br></pre></td></tr></table></figure>
+
+<p>更新应用源</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br></pre></td></tr></table></figure>
+
+<p>开启存储访问权限</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure>
+
+<p>安装必要服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install -y vim openssh openssl samba root-repo tsh</span><br></pre></td></tr></table></figure>
+
+<h4 id="电脑ssh登陆进行配置"><a href="#电脑ssh登陆进行配置" class="headerlink" title="电脑ssh登陆进行配置"></a>电脑ssh登陆进行配置</h4><p>我一般习惯通过共钥直接登陆，复制电脑上的<code>~/.ssh/id_rsa.pub</code>的内容，发送到设备上</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$id_rsa</span>.pub &gt;&gt; ~/.ssh/known_hosts</span><br></pre></td></tr></table></figure>
+
+<p>把电脑的公钥配置到安卓设备上， 就不用用户密码直接登陆了。</p>
+<p>直接运行sshd就会开启远程ssh服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sshd</span><br></pre></td></tr></table></figure>
+
+<p>查看设备ip地址</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<p>然后直接登陆（termux 默认端口 为8022）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh 192.168.1.* -p 8022</span><br></pre></td></tr></table></figure>
+
+<h4 id="samba配置"><a href="#samba配置" class="headerlink" title="samba配置"></a>samba配置</h4><p>安装好samba服务后<code>/data/data/com.termux/files/usr/share/doc/samba</code>目录下默认会有个<code>smb.conf.example</code>文件，通过这个文件修改几处配置，然后通过这个文件启动就可以开启smb服务了。</p>
+<p>先复制一份出去，然后再进行编辑</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /data/data/com.termux/files/usr/etc/samba</span><br><span class="line"><span class="comment"># copy 一份文件后编辑 </span></span><br><span class="line"><span class="built_in">cp</span> /data/data/com.termux/files/usr/share/doc/samba/smb.conf.example /data/data/com.termux/files/usr/etc/samba/smb.conf</span><br></pre></td></tr></table></figure>
+
+<p>对配置文件进行编辑</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"># vim: filetype=samba</span><br><span class="line">[global]</span><br><span class="line">   ; these are very recommended to have, even if maybe superfluous</span><br><span class="line">   workgroup = WORKGROUP</span><br><span class="line">   unix password sync = no</span><br><span class="line">   pam password change = no</span><br><span class="line">   obey pam restrictions = no</span><br><span class="line">   passwd program = /data/data/com.termux/files/usr/bin/true</span><br><span class="line">   add user script = /data/data/com.termux/files/usr/bin/true</span><br><span class="line">   add group script = /data/data/com.termux/files/usr/bin/true</span><br><span class="line">   add user to group script = /data/data/com.termux/files/usr/bin/true</span><br><span class="line">   add machine script = /data/data/com.termux/files/usr/bin/true</span><br><span class="line">   delete user script = /data/data/com.termux/files/usr/bin/true</span><br><span class="line">   delete user from group script = /data/data/com.termux/files/usr/bin/true</span><br><span class="line">   delete group script = /data/data/com.termux/files/usr/bin/true</span><br><span class="line">   rename user script = /data/data/com.termux/files/usr/bin/true</span><br><span class="line">   name resolve order = lmhosts host bcast</span><br><span class="line">   bind interfaces only = yes</span><br><span class="line">   interfaces = 127.0.0.0/8 wlan0</span><br><span class="line"></span><br><span class="line">   ;hosts allow = 192.168.1.5 127.</span><br><span class="line">   server string = Samba on Termux</span><br><span class="line">   security = user</span><br><span class="line">   server role = standalone</span><br><span class="line">   delete readonly = yes</span><br><span class="line">   inherit permissions = yes</span><br><span class="line"></span><br><span class="line">   ; Make smbd do less and announce nothing</span><br><span class="line">   ; for automatic discovery, you may need to remove some of these</span><br><span class="line">   local master = no</span><br><span class="line">   preferred master = no</span><br><span class="line">   lm announce = no</span><br><span class="line">   multicast dns register = no</span><br><span class="line">   host msdfs = no</span><br><span class="line">   dns proxy = no</span><br><span class="line">   allow dns updates = disabled</span><br><span class="line">   dns update command = /data/data/com.termux/files/usr/bin/false</span><br><span class="line">   server services = smb</span><br><span class="line">   dcerpc endpoint servers = rpcecho</span><br><span class="line"></span><br><span class="line">   ; if you disable NetBIOS, which enables automatic discovery, 1139 can be removed from smb ports</span><br><span class="line">   ;disable netbios = yes</span><br><span class="line">   ; remember: ports &lt; 1024 cannot be bound to by non-root processes</span><br><span class="line">   ; Windows can only see SMB servers on port 445, so if your phone is rooted</span><br><span class="line">   ; use iptables to redirect requests for port</span><br><span class="line">   ; 445 to, say, 4445 (capabilities may work instead. no clue)</span><br><span class="line">   smb ports = 139 445</span><br><span class="line">   max connections = 6</span><br><span class="line">   max smbd processes = 8</span><br><span class="line">   deadtime = 15</span><br><span class="line"></span><br><span class="line">   ; disable guest access</span><br><span class="line">   map to guest = Bad User</span><br><span class="line">   restrict anonymous = 2</span><br><span class="line"></span><br><span class="line">   ; basic attempt at performance tuning for my phone</span><br><span class="line">   ; change as necessary for your device</span><br><span class="line">   ;aio read size = 16384 </span><br><span class="line">   aio write size = 0</span><br><span class="line">   use sendfile = yes </span><br><span class="line">   min receivefile size = 16384</span><br><span class="line">   socket options = TCP_NODELAY SO_KEEPALIVE</span><br><span class="line">   oplocks = yes</span><br><span class="line">   level2 oplocks = yes</span><br><span class="line">   kernel oplocks = no</span><br><span class="line">   strict locking = no</span><br><span class="line">   max stat cache size = 1024</span><br><span class="line"></span><br><span class="line">   ; turn off things that cannot be set on sdcardfs and vfat filesystems</span><br><span class="line">   nt acl support = no</span><br><span class="line">   unix extensions = no</span><br><span class="line">   ea support = no</span><br><span class="line">   store dos attributes = no</span><br><span class="line">   map archive = no</span><br><span class="line">   map hidden = no</span><br><span class="line">   map readonly = no</span><br><span class="line">   map system = no</span><br><span class="line"></span><br><span class="line">   ;log file = /data/data/com.termux/files/usr/var/log/samba/log.%m</span><br><span class="line">   ;log level = 0</span><br><span class="line">   max log size = 50</span><br><span class="line">   ;logging = syslog</span><br><span class="line">   ;syslog only = yes</span><br><span class="line">   ;syslog = 0</span><br><span class="line">   enable core files = no</span><br><span class="line"></span><br><span class="line">   ; disable printing support as much as possible</span><br><span class="line">   load printers = no</span><br><span class="line">   printing = bsd</span><br><span class="line">   printcap name = /dev/null</span><br><span class="line">   disable spoolss = yes</span><br><span class="line">   show add printer wizard = no</span><br><span class="line">   max print jobs = 0</span><br><span class="line">   lpq command = /data/data/com.termux/files/usr/bin/false</span><br><span class="line">   lprm command = /data/data/com.termux/files/usr/bin/false</span><br><span class="line">   print command = /data/data/com.termux/files/usr/bin/false</span><br><span class="line"></span><br><span class="line">#============================ Share Definitions ==============================</span><br><span class="line"></span><br><span class="line">; replace /storage/ext_sd with the path to your external card in /storage</span><br><span class="line">; because of the way Android works, you cannot have write access</span><br><span class="line">; to external storage unless you&#x27;re running a custom ROM or have</span><br><span class="line">; the Magisk module that enables it installed</span><br><span class="line">[internal]</span><br><span class="line">  comment = Internal storage</span><br><span class="line">  path = /sdcard</span><br><span class="line">  vfs objects = aio_pthread</span><br><span class="line">  aio_pthread:aio open = yes</span><br><span class="line">  read only = no</span><br><span class="line">; browseable = no</span><br><span class="line">  writable = yes</span><br><span class="line">  guest ok = yes</span><br><span class="line">  fstype = FAT</span><br><span class="line">;;   force group = media_rw</span><br><span class="line">;;   create mask = 0770</span><br><span class="line">;;   force create mode = 0770</span><br></pre></td></tr></table></figure>
+
+<p>第47行端口改为139和445，第53行的<code>map to guest = Never</code>改为<code>map to guest = Bad User</code>, 第100行下嘛的分享路径和权限按需配置即可。 如果需要限制访问IP可以打开第21行注释，建议放开同网段下所有局域网: </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hosts allow = 192.168.1.0/24</span><br></pre></td></tr></table></figure>
+
+<p>如果需要加密访问就保持53行<code>map to guest = Never</code>，然后再termux中进入root用户，使用<code>smbpasswd</code>    创建用户和密码。然后再分享的目录配置里面新增管理用户, 关闭来宾访问。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line">/data/data/com.termux/files/usr/bin/smbpasswd -a Tia</span><br></pre></td></tr></table></figure>
+
+<p>smb.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">guest ok = no</span><br><span class="line">admin users = Tia</span><br><span class="line">valid users = Tia</span><br></pre></td></tr></table></figure>
+
+<p>每次启动输一堆命令很麻烦，直接新建一个sh脚本吧</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;#!/bin/bash</span></span><br><span class="line"><span class="string">sudo /data/data/com.termux/files/usr/bin/smbd -s /data/data/com.termux/files/usr/etc/samba/smb.conf</span></span><br><span class="line"><span class="string">&#x27;</span> &gt; setupsmb.sh</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>之后启动termux后直接输入脚本就可以启动服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动 Samba 服务</span></span><br><span class="line">./stupsmb.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看进程是否运行</span></span><br><span class="line">ps aux | grep smbd</span><br></pre></td></tr></table></figure>
+
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>一下子多了200多G空间，应该足够坚持到过保咯。</p>
+<p><img src="https://tia.nos-eastchina1.126.net/blog/2025-04-05/1743842825358.png" alt="挂在效果"></p>
+
       
 
       
@@ -212,16 +267,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/04/04/%E6%8A%8A%E9%97%B2%E7%BD%AE%E7%9A%84%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%81%9A%E6%88%90smb%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://qiatia.github.io/2025/04/04/%E6%8A%8A%E9%97%B2%E7%BD%AE%E7%9A%84%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E5%81%9A%E6%88%90smb%E6%9C%8D%E5%8A%A1%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2025/02/13/flutter%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E9%9A%8F%E7%AC%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flutter的一些经验随笔</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -241,719 +355,14 @@
 
 
 
-
-  
-    <article id="post-flutter的一些经验随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/02/13/flutter%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E9%9A%8F%E7%AC%94/">flutter的一些经验随笔</a>
-    </h1>
-  
-
-        
-        <a href="/2025/02/13/flutter%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2025-02-13T04:54:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-02-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近新建flutter项目时，发现以前在macos端解决好的问题又重新出现了，我发现我竟然想不太起来如何解决了，还是记录一下吧。</p>
-        
-          <a class="article-more-a" href="/2025/02/13/flutter%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E9%9A%8F%E7%AC%94/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2025/02/13/flutter%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E9%9A%8F%E7%AC%94/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GetxController_使用指北" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/12/04/GetxController_%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/">GetxController 使用指北</a>
-    </h1>
-  
-
-        
-        <a href="/2024/12/04/GetxController_%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/" class="archive-article-date">
-  	<time datetime="2024-12-04T11:08:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-12-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在Flutter开发中，<code>GetX</code>是一个非常强大的库，特别是它的依赖注入（DI）功能。依赖注入不仅简化了状态管理和服务的获取，还使得应用更加模块化，易于测试。本文通过实例深入讲解GetX依赖注入的应用。</p>
-        
-          <a class="article-more-a" href="/2024/12/04/GetxController_%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">GetX</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/12/04/GetxController_%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8C%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-使用flutter中的Transform创建动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/11/24/%E4%BD%BF%E7%94%A8flutter%E4%B8%AD%E7%9A%84Transform%E5%88%9B%E5%BB%BA%E5%8A%A8%E7%94%BB/">使用flutter中的Transform创建动画</a>
-    </h1>
-  
-
-        
-        <a href="/2024/11/24/%E4%BD%BF%E7%94%A8flutter%E4%B8%AD%E7%9A%84Transform%E5%88%9B%E5%BB%BA%E5%8A%A8%E7%94%BB/" class="archive-article-date">
-  	<time datetime="2024-11-24T13:48:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在 Flutter 中，<code>Transform</code> 是一个非常强大的类，用于对子组件进行各种变换操作，如平移、旋转、缩放等。<code>Transform</code> 类提供了多种静态方法来创建不同的变换效果。以下是 <code>Transform</code> 的详细介绍及其常用方法：</p>
-        
-          <a class="article-more-a" href="/2024/11/24/%E4%BD%BF%E7%94%A8flutter%E4%B8%AD%E7%9A%84Transform%E5%88%9B%E5%BB%BA%E5%8A%A8%E7%94%BB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Transform</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/11/24/%E4%BD%BF%E7%94%A8flutter%E4%B8%AD%E7%9A%84Transform%E5%88%9B%E5%BB%BA%E5%8A%A8%E7%94%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Dart中dio无感刷新Token" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/06/15/Dart%E4%B8%ADdio%E6%97%A0%E6%84%9F%E5%88%B7%E6%96%B0Token/">Dart中dio无感刷新Token</a>
-    </h1>
-  
-
-        
-        <a href="/2024/06/15/Dart%E4%B8%ADdio%E6%97%A0%E6%84%9F%E5%88%B7%E6%96%B0Token/" class="archive-article-date">
-  	<time datetime="2024-06-15T14:05:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-06-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在试着搭建一个FlutterAPP的骨架，网络请求授权是其中很重要并且很基础的内容，是一个应用不可或缺的模块。</p>
-        
-          <a class="article-more-a" href="/2024/06/15/Dart%E4%B8%ADdio%E6%97%A0%E6%84%9F%E5%88%B7%E6%96%B0Token/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Request</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">dio</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/06/15/Dart%E4%B8%ADdio%E6%97%A0%E6%84%9F%E5%88%B7%E6%96%B0Token/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-12 个Typescript开发实用小技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/02/15/12%20%E4%B8%AATypescript%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/">转 - 12 个Typescript开发实用小技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2024/02/15/12%20%E4%B8%AATypescript%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="archive-article-date">
-  	<time datetime="2024-02-15T15:05:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Typescript 在类型检查方面非常强大，但有时某些类型是其他类型的子集并且需要为它们定义类型检查时，它会变得乏味。</p>
-<h3 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h3><p>有两种响应类型：</p>
-        
-          <a class="article-more-a" href="/2024/02/15/12%20%E4%B8%AATypescript%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">TypeScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2024/02/15/12%20%E4%B8%AATypescript%E5%BC%80%E5%8F%91%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ios上架记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/09/18/ios%E4%B8%8A%E6%9E%B6%E8%AE%B0%E5%BD%95/">IOS APP上架笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2023/09/18/ios%E4%B8%8A%E6%9E%B6%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2023-09-18T04:03:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="创建证书"><a href="#创建证书" class="headerlink" title="创建证书"></a>创建证书</h2><h4 id="生成csr文件"><a href="#生成csr文件" class="headerlink" title="生成csr文件"></a>生成csr文件</h4><p>在苹果开发者中心生成证书的时候需要一个CSR文件。</p>
-<p>需要在<code>MacOs</code>系统中，打开<code>钥匙串访问工具</code>， 在钥匙串访问下拉菜单中选中<code>证书助理</code>，<code>从证书颁发机构请求证书</code>； 输入邮件地址，名称，然后选择存储到磁盘， 这样就生成了一个<code>CSR</code>文件。</p>
-        
-          <a class="article-more-a" href="/2023/09/18/ios%E4%B8%8A%E6%9E%B6%E8%AE%B0%E5%BD%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">IOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">APP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/09/18/ios%E4%B8%8A%E6%9E%B6%E8%AE%B0%E5%BD%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-浏览器拓展抓取表单数据渲染到Word模版文件中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/06/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8B%93%E5%B1%95%E6%8A%93%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E5%88%B0Word%E6%A8%A1%E7%89%88%E6%96%87%E4%BB%B6%E4%B8%AD/">浏览器拓展抓取表单数据渲染到Word模版文件中</a>
-    </h1>
-  
-
-        
-        <a href="/2023/06/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8B%93%E5%B1%95%E6%8A%93%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E5%88%B0Word%E6%A8%A1%E7%89%88%E6%96%87%E4%BB%B6%E4%B8%AD/" class="archive-article-date">
-  	<time datetime="2023-06-02T06:32:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-06-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这次我们领导突然给我安排这一个业务，开始也是把我震惊到了。我们公司找了两个外包负责的业务，B公司负责管理一些加盟商信息，然后审批过了之后就把数据发送到C公司生成在线合同，然后发送给客户签署。这些业务完全都已经跑通了的，只是随时会出现字段，或者数据填充错误，现在我们领导就想确认前先生成一个预览合同。让法务部门先确认一下字段是否填写正确。</p>
-        
-          <a class="article-more-a" href="/2023/06/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8B%93%E5%B1%95%E6%8A%93%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E5%88%B0Word%E6%A8%A1%E7%89%88%E6%96%87%E4%BB%B6%E4%B8%AD/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">浏览器拓展</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/06/02/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8B%93%E5%B1%95%E6%8A%93%E5%8F%96%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E5%88%B0Word%E6%A8%A1%E7%89%88%E6%96%87%E4%BB%B6%E4%B8%AD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Nginx和vite配置Brotli" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/12/Nginx%E5%92%8Cvite%E9%85%8D%E7%BD%AEBrotli/">nginx和vite配置Brotli</a>
-    </h1>
-  
-
-        
-        <a href="/2023/02/12/Nginx%E5%92%8Cvite%E9%85%8D%E7%BD%AEBrotli/" class="archive-article-date">
-  	<time datetime="2023-02-12T11:07:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="关于Brotli"><a href="#关于Brotli" class="headerlink" title="关于Brotli"></a>关于Brotli</h3><p><code>Google</code> 认为互联网用户的时间是宝贵的，他们的时间不应该消耗在漫长的网页加载中，因此在 2015 年 9 月 <code>Google</code> 推出了无损压缩算法 <code>Brotli</code>。<code>Brotli</code> 通过变种的 <code>LZ77</code> 算法、<code>Huffman</code> 编码以及二阶文本建模等方式进行数据压缩，与其他压缩算法相比，它有着更高的压塑压缩效率。 关于<code>Brotli</code>详细介绍可<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Brotli">点击这里</a>。</p>
-        
-          <a class="article-more-a" href="/2023/02/12/Nginx%E5%92%8Cvite%E9%85%8D%E7%BD%AEBrotli/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/02/12/Nginx%E5%92%8Cvite%E9%85%8D%E7%BD%AEBrotli/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Flutter-学习之路-APP骨架Scaffold" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/20/Flutter-%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-APP%E9%AA%A8%E6%9E%B6Scaffold/">Flutter 学习之路 - APP骨架Scaffold</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/20/Flutter-%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-APP%E9%AA%A8%E6%9E%B6Scaffold/" class="archive-article-date">
-  	<time datetime="2022-11-20T09:45:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>利用Material 提供<code>Scaffold</code>组件可以很方便的搭建出页面的骨架.</p>
-        
-          <a class="article-more-a" href="/2022/11/20/Flutter-%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-APP%E9%AA%A8%E6%9E%B6Scaffold/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">大前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/20/Flutter-%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-APP%E9%AA%A8%E6%9E%B6Scaffold/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -976,8 +385,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
